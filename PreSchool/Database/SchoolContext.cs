@@ -1,0 +1,19 @@
+﻿using PreSchool.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace PreSchool.Database
+{
+    public class SchoolContext : DbContext
+    {
+        public DbSet<Child> Children { get; set; }
+        public DbSet<Adult> Adults { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        //public DbSet<Adress> Adresses { get; set; }
+        //public DbSet<Unit> Units { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MEPreSchool;Trusted_Connection=True;");
+        }
+    }
+}
