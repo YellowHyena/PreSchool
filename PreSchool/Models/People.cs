@@ -1,6 +1,7 @@
 ﻿namespace PreSchool.Models
 {
-    public class Child : Person
+    using PreSchool.Database;
+    public class Child
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -11,21 +12,18 @@
             get { return PeopleHelper.GetAge(PersonalNumber); }
         } 
 
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string PostCode { get; set; }
-        public int Guardian1 { get; set; } //AdultId
-        public int Guardian2 { get; set; } //AdultId 
+        public List<Address> AddressesInfo { get; set; }
+        public List<Adult> Adults { get; set; }
         public bool PublicPreSchool { get; set; } = false;
         public bool FifteenHours { get; set; } = false;
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime ApplicationDate { get; set; }
 
-        public string Unit { get; set; } // koppla till avdelning
+        public string Group { get; set; } // koppla till avdelning
     }
 
-    public class Adult : Person
+    public class Adult
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -35,15 +33,12 @@
         public int Age
         {
             get { return PeopleHelper.GetAge(PersonalNumber); }
-        }  
-        public string Street { get; set; } //
-        public string City { get; set; } //
-        public string PostCode { get; set; } // samla dessa tre som adress?
+        }
+        public List<Address> AddressesInfo { get; set; }
 
-        public int GuardianFor { get; set; } //Child where Guiardian.Id || Guardian.Id == adult.id typ
+        public List<Child> Children { get; set; }
 
         public string IncomeInfo { get; set; }
-        public string MaxTax { get; set; }
 
         public string PhoneNumber { get; set; }
 
@@ -52,7 +47,7 @@
 
     }
 
-    public class Employee : Person
+    public class Employee
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -64,9 +59,8 @@
             get { return PeopleHelper.GetAge(PersonalNumber); }
         }
 
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string PostCode { get; set; }
+        public List<Address> AddressesInfo { get; set; }
+        public string Group { get; set; }
 
     }
 

@@ -8,8 +8,8 @@ namespace PreSchool.Database
         public DbSet<Child> Children { get; set; }
         public DbSet<Adult> Adults { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        //public DbSet<Adress> Adresses { get; set; }
-        //public DbSet<Unit> Units { get; set; }
+        public DbSet<Address> AddressInfo { get; set; }
+        public DbSet<Group> Groups { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
