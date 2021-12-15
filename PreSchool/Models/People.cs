@@ -4,8 +4,8 @@
     public class Child
     {
         public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FirstName { get; set; } = "";
+        public string LastName { get; set; } = "";
         public long PersonalNumber { get; set; }
         public int Age
         {
@@ -20,14 +20,14 @@
         public DateTime EndDate { get; set; }
         public DateTime ApplicationDate { get; set; }
 
-        public string Group { get; set; } // koppla till avdelning
+        public string Group { get; set; } = "";
     }
 
     public class Adult
     {
         public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FirstName { get; set; } = "";
+        public string LastName { get; set; } = "";
 
         public long PersonalNumber { get; set; }
         public int Age
@@ -36,11 +36,11 @@
         }
         public List<Address> AddressesInfo { get; set; }
 
-        public List<Child> Children { get; set; }
+        public List<Child> Children { get; set; } 
 
-        public string IncomeInfo { get; set; }
+        public string IncomeInfo { get; set; } = "";
 
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; } = "";
 
         public int DebitFee { get; set; }
         public int BillRecipent { get; set; } // Borde väll va på barnet?

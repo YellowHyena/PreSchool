@@ -21,12 +21,16 @@ namespace PreSchool
                     LastName = "Parker",
 
                 });
+               
 
                 db.Adults.Add(new Adult
                 {
                     FirstName = "Richard",
                     LastName= "Parker",                
                 });
+                db.SaveChanges();
+
+
 
                 var ric = db.Adults.Include("Children").FirstOrDefault(s => s.FirstName == "Richard");
                 if (ric.Children == null) ric.Children = new List<Child>();
@@ -35,7 +39,11 @@ namespace PreSchool
                 if (peter != null) ric.Children.Add(peter);
 
                 db.SaveChanges();
+
+                label1.Text = ric.Children[0].FirstName;
             }
+
+            
         }
     }
 }

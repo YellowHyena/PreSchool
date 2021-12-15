@@ -13,9 +13,9 @@ namespace PreSchool.Models
         public int AdultId { get; set; }
         public int EmployeeId { get; set; }
 
-        public string Street { get; set; }
-        public string City { get; set; }
-        public string PostCode { get; set; }
+        public string Street { get; set; } = "";
+        public string City { get; set; } = "";
+        public string PostCode { get; set; } = "";
 
     }
 }
