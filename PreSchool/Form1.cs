@@ -1,7 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using PreSchool.Database;
-using PreSchool.Models;
-
 namespace PreSchool
 {
     public partial class Form1 : Form
@@ -11,39 +7,35 @@ namespace PreSchool
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            using (var db = new SchoolContext())
-            {
-                db.Children.Add(new Child
-                {
-                    FirstName = "Peter",
-                    LastName = "Parker",
 
-                });
-               
+        }
 
-                db.Adults.Add(new Adult
-                {
-                    FirstName = "Richard",
-                    LastName= "Parker",                
-                });
-                db.SaveChanges();
+        private void perNumBox_TextChanged(object sender, EventArgs e)
+        {
+            int perNum;
+            bool number = int.TryParse(perNumBox.Text, out perNum);
+            if (number == true || perNumBox.Text == "") perNumHelpLabel.Visible = false;
+            else perNumHelpLabel.Visible = true;
+        }
 
+        private void addButton_Click(object sender, EventArgs e)
+        {
 
+        }
 
-                var ric = db.Adults.Include("Children").FirstOrDefault(s => s.FirstName == "Richard");
-                if (ric.Children == null) ric.Children = new List<Child>();
-
-                var peter = db.Children.FirstOrDefault(p => p.FirstName == "Peter");
-                if (peter != null) ric.Children.Add(peter);
-
-                db.SaveChanges();
-
-                label1.Text = ric.Children[0].FirstName;
-            }
-
-            
+        private void addChildButton_Click_1(object sender, EventArgs e)
+        {
+            string name = nameBox.Text;
+            string lastName = lastNameBox.Text;
+            int perNum = int.Parse(perNumBox.Text);
+            string group = groupComboBox.Text;
+            DateTime start = startDatePicker.Value;
+            DateTime end = endDatePicker.Value;
+            DateTime apply = applicationDatePicker.Value;
+            bool
+            CRUD.Create.Child();
         }
     }
 }

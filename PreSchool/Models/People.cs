@@ -13,14 +13,16 @@
         } 
 
         public List<Address> AddressesInfo { get; set; }
-        public List<Adult> Adults { get; set; }
+        public List<Adult> Guairdians { get; set; }
         public bool PublicPreSchool { get; set; } = false;
         public bool FifteenHours { get; set; } = false;
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime ApplicationDate { get; set; }
 
-        public string Group { get; set; } = "";
+        public List<Group> Groups { get; set; }
+
+        public int BillRecipent { get; set; } //adultid
     }
 
     public class Adult
@@ -43,7 +45,7 @@
         public string PhoneNumber { get; set; } = "";
 
         public int DebitFee { get; set; }
-        public int BillRecipent { get; set; } // Borde väll va på barnet?
+        
 
     }
 
@@ -64,7 +66,7 @@
 
     }
 
-    public class PeopleHelper
+    public class PeopleHelper   //Hallå vart tog referenslänken vägen??? Fixa
     {
         public static int GetAge(long personalNumber)
         {

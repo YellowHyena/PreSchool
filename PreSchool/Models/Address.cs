@@ -10,7 +10,7 @@ namespace PreSchool.Models
     {
         public int Id { get; set; }
         public int ChildId { get; set; }
-        public int AdultId { get; set; }
+        public int GuardianId { get; set; }
         public int EmployeeId { get; set; }
 
         public string Street { get; set; } = "";
