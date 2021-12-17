@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PreSchool.Database;
 
@@ -11,9 +12,10 @@ using PreSchool.Database;
 namespace PreSchool.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    partial class SchoolContextModelSnapshot : ModelSnapshot
+    [Migration("20211217143414_firstmaybe")]
+    partial class firstmaybe
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,6 +37,21 @@ namespace PreSchool.Migrations
                     b.HasIndex("GuardiansId");
 
                     b.ToTable("AdultChild");
+                });
+
+            modelBuilder.Entity("ChildGroup", b =>
+                {
+                    b.Property<int>("ChildrenId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GroupsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ChildrenId", "GroupsId");
+
+                    b.HasIndex("GroupsId");
+
+                    b.ToTable("ChildGroup");
                 });
 
             modelBuilder.Entity("PreSchool.Models.Address", b =>
@@ -144,13 +161,6 @@ namespace PreSchool.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Group")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("GroupId")
-                        .HasColumnType("int");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -165,8 +175,6 @@ namespace PreSchool.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("GroupId");
 
                     b.ToTable("Children");
                 });
@@ -231,6 +239,21 @@ namespace PreSchool.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ChildGroup", b =>
+                {
+                    b.HasOne("PreSchool.Models.Child", null)
+                        .WithMany()
+                        .HasForeignKey("ChildrenId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PreSchool.Models.Group", null)
+                        .WithMany()
+                        .HasForeignKey("GroupsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("PreSchool.Models.Address", b =>
                 {
                     b.HasOne("PreSchool.Models.Adult", null)
@@ -257,13 +280,6 @@ namespace PreSchool.Migrations
                         .HasForeignKey("GroupId");
                 });
 
-            modelBuilder.Entity("PreSchool.Models.Child", b =>
-                {
-                    b.HasOne("PreSchool.Models.Group", null)
-                        .WithMany("Children")
-                        .HasForeignKey("GroupId");
-                });
-
             modelBuilder.Entity("PreSchool.Models.Adult", b =>
                 {
                     b.Navigation("AddressesInfo");
@@ -282,8 +298,6 @@ namespace PreSchool.Migrations
             modelBuilder.Entity("PreSchool.Models.Group", b =>
                 {
                     b.Navigation("Adults");
-
-                    b.Navigation("Children");
                 });
 #pragma warning restore 612, 618
         }

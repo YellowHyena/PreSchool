@@ -10,38 +10,17 @@ namespace PreSchool
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void perNumBox_TextChanged(object sender, EventArgs e)
         {
-            int perNum;
-            bool number = int.TryParse(perNumBox.Text, out perNum);
+            long perNum;
+            bool number = long.TryParse(perNumBox.Text, out perNum);
             if (number == true || perNumBox.Text == "") perNumHelpLabel.Visible = false;
             else perNumHelpLabel.Visible = true;
         }
 
-        private void addButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void addChildButton_Click_1(object sender, EventArgs e)
         {
-            string name = nameBox.Text;
-            string lastName = lastNameBox.Text;
-            int perNum = int.Parse(perNumBox.Text);
-            string group = groupComboBox.Text;
-            DateTime start = startDatePicker.Value;
-            DateTime end = endDatePicker.Value;
-            DateTime apply = applicationDatePicker.Value;
-            bool publ = publicCheckBox.Checked;
-            bool fifteen = fifteenHCheckBox.Checked;
-
-
-            CRUD.Create.Child(ChildInfo);
+            CRUD.Create.Child(ChildInfo());
         }
         public Child ChildInfo()
         {
@@ -50,7 +29,7 @@ namespace PreSchool
             {
                 FirstName = nameBox.Text,
                 LastName = lastNameBox.Text,
-                PersonalNumber = int.Parse(perNumBox.Text),
+                PersonalNumber = long.Parse(perNumBox.Text),
                 StartDate = startDatePicker.Value,
                 EndDate = endDatePicker.Value,
                 ApplicationDate = applicationDatePicker.Value,

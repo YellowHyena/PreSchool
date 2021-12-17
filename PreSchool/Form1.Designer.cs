@@ -84,7 +84,6 @@
             this.lastNameBox.Name = "lastNameBox";
             this.lastNameBox.Size = new System.Drawing.Size(151, 27);
             this.lastNameBox.TabIndex = 2;
-            this.lastNameBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // perNumLabel
             // 

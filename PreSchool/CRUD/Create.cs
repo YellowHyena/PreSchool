@@ -7,6 +7,8 @@ namespace PreSchool.CRUD
     {
         public static void Child(Child tempChild)
         {
+            //exists = false;
+
             using var db = new SchoolContext();
             var child = db.Children.FirstOrDefault(s => s.PersonalNumber == tempChild.PersonalNumber);
             if (child == null)
@@ -25,6 +27,7 @@ namespace PreSchool.CRUD
                 });
                 db.SaveChanges();
             }
+            //else exists = true;
         }
     }
 }

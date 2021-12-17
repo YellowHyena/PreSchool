@@ -20,7 +20,9 @@
         public DateTime EndDate { get; set; }
         public DateTime ApplicationDate { get; set; }
 
-        public List<Group> Groups { get; set; }
+        //public List<Group> Groups { get; set; }
+        public string Group { get; set; }
+
 
         public int BillRecipent { get; set; } //adultid
     }
