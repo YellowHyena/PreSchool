@@ -13,7 +13,7 @@
         } 
 
         public List<Address> AddressesInfo { get; set; }
-        public List<Adult> Guairdians { get; set; }
+        public List<Adult> Guardians { get; set; }
         public bool PublicPreSchool { get; set; } = false;
         public bool FifteenHours { get; set; } = false;
         public DateTime StartDate { get; set; }
