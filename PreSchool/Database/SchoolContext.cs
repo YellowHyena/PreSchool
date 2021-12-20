@@ -6,7 +6,7 @@ namespace PreSchool.Database
     public class SchoolContext : DbContext
     {
         public DbSet<Child> Children { get; set; }
-        public DbSet<Adult> Adults { get; set; }
+        public DbSet<Guardian> Guardians { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Address> AddressInfo { get; set; }
         public DbSet<Group> Groups { get; set; }

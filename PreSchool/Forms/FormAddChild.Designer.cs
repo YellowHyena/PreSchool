@@ -113,6 +113,7 @@
             this.lastNameBox.Name = "lastNameBox";
             this.lastNameBox.Size = new System.Drawing.Size(169, 29);
             this.lastNameBox.TabIndex = 25;
+            this.lastNameBox.Leave += new System.EventHandler(this.lastNameBox_Leave);
             // 
             // guardianLabel2
             // 
@@ -146,6 +147,7 @@
             this.perNumBox.Name = "perNumBox";
             this.perNumBox.Size = new System.Drawing.Size(169, 29);
             this.perNumBox.TabIndex = 27;
+            this.perNumBox.TextChanged += new System.EventHandler(this.perNumBox_TextChanged);
             // 
             // guardianLabel
             // 
@@ -167,11 +169,8 @@
             // 
             // groupComboBox
             // 
+            this.groupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.groupComboBox.FormattingEnabled = true;
-            this.groupComboBox.Items.AddRange(new object[] {
-            "Avdelning 1",
-            "Avdelning 2",
-            "Avdelning 3"});
             this.groupComboBox.Location = new System.Drawing.Point(188, 207);
             this.groupComboBox.Name = "groupComboBox";
             this.groupComboBox.Size = new System.Drawing.Size(169, 30);
@@ -275,6 +274,7 @@
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "FormAddChild";
             this.Text = "AddChild";
+            this.Load += new System.EventHandler(this.FormAddChild_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

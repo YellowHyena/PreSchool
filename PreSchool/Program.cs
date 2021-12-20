@@ -1,5 +1,6 @@
 namespace PreSchool
 {
+    using PreSchool.Models;
     internal static class Program
     {
         /// <summary>
@@ -8,6 +9,7 @@ namespace PreSchool
         [STAThread]
         static void Main()
         {
+            Group.CreateGroups();
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }

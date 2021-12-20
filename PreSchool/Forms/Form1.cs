@@ -23,7 +23,7 @@ namespace PreSchool
             panelDeleteSubMenu.Visible = false;
         }
 
-            private void ShowSubMenu(Panel subMenu)
+        private void ShowSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
             {
@@ -135,7 +135,7 @@ namespace PreSchool
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock= DockStyle.Fill;
+            childForm.Dock = DockStyle.Fill;
             panelChild.Controls.Add(childForm);
             panelChild.Tag = childForm;
             childForm.Show();

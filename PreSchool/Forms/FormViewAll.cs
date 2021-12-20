@@ -20,22 +20,23 @@ namespace PreSchool
 
         private void FormViewAll_Load(object sender, EventArgs e)
         {         
-            using var db = new SchoolContext();
-
-            string name = "";
-            foreach (var child in db.Children)
+            using (var db = new SchoolContext())
             {
-                name = child.FirstName + " " + child.LastName;
-                listBox1.Items.Add(name);
-            }
 
-            string groupName = "";
-            foreach (var group in db.Groups)
-            {
-                name = group.Name;
-                listBox1.Items.Add(name);
-            }
+                string name = "";
+                foreach (var child in db.Children)
+                {
+                    name = child.FirstName + " " + child.LastName;
+                    listBox1.Items.Add(name);
+                }
 
+                string groupName = "";
+                foreach (var group in db.Groups)
+                {
+                    name = group.Name;
+                    listBox1.Items.Add(name);
+                }
+            }
         }
     }
 }
