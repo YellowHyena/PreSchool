@@ -287,7 +287,7 @@
             this.btnAddChild.Text = "Barn";
             this.btnAddChild.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddChild.UseVisualStyleBackColor = true;
-            this.btnAddChild.Click += new System.EventHandler(this.btnAddChild_Click);
+            this.btnAddChild.Click += new System.EventHandler(this.btnAddChildForm_Click);
             // 
             // btnAdd
             // 
@@ -332,7 +332,7 @@
             this.btnShowAll.Text = "Alla";
             this.btnShowAll.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnShowAll.UseVisualStyleBackColor = true;
-            this.btnShowAll.Click += new System.EventHandler(this.btnShowGroup_Click);
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // btnShowEmployed
             // 

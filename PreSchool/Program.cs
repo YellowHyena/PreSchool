@@ -9,7 +9,7 @@ namespace PreSchool
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormAddChild());
+            Application.Run(new Form1());
         }
     }
 }

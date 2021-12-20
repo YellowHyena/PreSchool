@@ -12,16 +12,11 @@ namespace PreSchool
         }
         private void perNumBox_TextChanged(object sender, EventArgs e)
         {
-            long perNum;
-            bool number = long.TryParse(perNumBox.Text, out perNum);
+            bool number = long.TryParse(perNumBox.Text, out long perNum);
             if (number == true || perNumBox.Text == "") perNumHelpLabel.Visible = false;
             else perNumHelpLabel.Visible = true;
         }
 
-        private void addChildButton_Click_1(object sender, EventArgs e)
-        {
-            Create.Child(ChildInfo());
-        }
         public Child ChildInfo()
         {
             using var db = new SchoolContext();
@@ -41,6 +36,11 @@ namespace PreSchool
             string guardian1 = guardianComboBox.Text;
             string guardian2 = guardianComboBox2.Text;
             return tempChild;
+        }
+
+        private void addChildButton_Click(object sender, EventArgs e)
+        {
+            Create.Child(ChildInfo());
         }
     }
 }

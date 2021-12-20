@@ -54,8 +54,9 @@ namespace PreSchool
             HideSubMenu();
         }
 
-        private void btnShowGroup_Click(object sender, EventArgs e)
+        private void btnShowAll_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new FormViewAll());
             HideSubMenu();
         }
         #endregion
@@ -65,7 +66,7 @@ namespace PreSchool
         {
             ShowSubMenu(panelAddSubMenu);
         }
-        private void btnAddChild_Click(object sender, EventArgs e)
+        private void btnAddChildForm_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormAddChild());
             HideSubMenu();

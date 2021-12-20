@@ -88,6 +88,7 @@
             this.addChildButton.TabIndex = 43;
             this.addChildButton.Text = "Add";
             this.addChildButton.UseVisualStyleBackColor = true;
+            this.addChildButton.Click += new System.EventHandler(this.addChildButton_Click);
             // 
             // nameLabel
             // 
