@@ -1,15 +1,15 @@
+﻿using PreSchool.CRUD;
 using PreSchool.Database;
 using PreSchool.Models;
 
 namespace PreSchool
 {
-    public partial class Form1 : Form
+    public partial class FormAddChild : Form
     {
-        public Form1()
+        public FormAddChild()
         {
             InitializeComponent();
         }
-
         private void perNumBox_TextChanged(object sender, EventArgs e)
         {
             long perNum;
@@ -20,7 +20,7 @@ namespace PreSchool
 
         private void addChildButton_Click_1(object sender, EventArgs e)
         {
-            CRUD.Create.Child(ChildInfo());
+            Create.Child(ChildInfo());
         }
         public Child ChildInfo()
         {
@@ -35,7 +35,7 @@ namespace PreSchool
                 ApplicationDate = applicationDatePicker.Value,
                 PublicPreSchool = publicCheckBox.Checked,
                 FifteenHours = fifteenHCheckBox.Checked,
-                
+
             };
             string group = groupComboBox.Text;
             string guardian1 = guardianComboBox.Text;
