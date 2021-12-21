@@ -29,7 +29,7 @@ namespace PreSchool
         }
 
 
-        public Dummy ChildInfo() //I don't have to check for and/or create guardians or groups when using dummy, its just information
+        public Dummy ChildInfo() //Using dummy to indicate that this is just information and not a person
         {
 
             var tempChild = new Dummy
@@ -40,9 +40,7 @@ namespace PreSchool
                 StartDate = startDatePicker.Value,
                 EndDate = endDatePicker.Value,
                 ApplicationDate = applicationDatePicker.Value,
-                Group = groupComboBox.Text,
-                Guardian1 = guardianComboBox.Text,
-                Guardian2 = guardianComboBox2.Text
+                Group = groupComboBox.Text
             };
 
             return tempChild;
@@ -51,23 +49,6 @@ namespace PreSchool
         private void addChildButton_Click(object sender, EventArgs e)
         {
             Create.Child(ChildInfo());
-        }
-
-        //Updates the dropdown of combobox to include guardian suggestions based on last name, in case the same guardian has 2 children.
-        //Given the guadian exists in the database ofc
-        private void lastNameBox_Leave(object sender, EventArgs e) 
-        {
-            using (var db = new SchoolContext())
-            {
-                string input = lastNameBox.Text;
-                var list = db.Guardians.Where(g => g.LastName.Contains(input));
-                if (list == null) return;
-                foreach (var guardian in list)
-                {
-                    guardianComboBox.Items.Add(guardian.FirstName + " " + guardian.LastName);
-                    guardianComboBox2.Items.Add(guardian.FirstName + " " + guardian.LastName);
-                }
-            }
-        }
+        }           
     }
 }

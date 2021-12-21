@@ -28,42 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fifteenHCheckBox = new System.Windows.Forms.CheckBox();
             this.perNumHelpLabel = new System.Windows.Forms.Label();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.addChildButton = new System.Windows.Forms.Button();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.guardianComboBox2 = new System.Windows.Forms.ComboBox();
             this.lastNameBox = new System.Windows.Forms.TextBox();
-            this.guardianLabel2 = new System.Windows.Forms.Label();
             this.lastNameLabel = new System.Windows.Forms.Label();
-            this.guardianComboBox = new System.Windows.Forms.ComboBox();
             this.perNumBox = new System.Windows.Forms.TextBox();
-            this.guardianLabel = new System.Windows.Forms.Label();
             this.perNumLabel = new System.Windows.Forms.Label();
             this.groupComboBox = new System.Windows.Forms.ComboBox();
             this.groupLabel = new System.Windows.Forms.Label();
             this.applicationLabel = new System.Windows.Forms.Label();
-            this.publicCheckBox = new System.Windows.Forms.CheckBox();
             this.applicationDatePicker = new System.Windows.Forms.DateTimePicker();
             this.startDatePicker = new System.Windows.Forms.DateTimePicker();
             this.endLabel = new System.Windows.Forms.Label();
             this.startLabel = new System.Windows.Forms.Label();
             this.endDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.radBtnBillRecipent = new System.Windows.Forms.RadioButton();
-            this.radBtnBillRecipent2 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
-            // 
-            // fifteenHCheckBox
-            // 
-            this.fifteenHCheckBox.AutoSize = true;
-            this.fifteenHCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fifteenHCheckBox.Location = new System.Drawing.Point(451, 95);
-            this.fifteenHCheckBox.Name = "fifteenHCheckBox";
-            this.fifteenHCheckBox.Size = new System.Drawing.Size(189, 24);
-            this.fifteenHCheckBox.TabIndex = 31;
-            this.fifteenHCheckBox.Text = "15-timmars placering";
-            this.fifteenHCheckBox.UseVisualStyleBackColor = true;
             // 
             // perNumHelpLabel
             // 
@@ -101,14 +82,6 @@
             this.nameLabel.TabIndex = 24;
             this.nameLabel.Text = "Namn";
             // 
-            // guardianComboBox2
-            // 
-            this.guardianComboBox2.FormattingEnabled = true;
-            this.guardianComboBox2.Location = new System.Drawing.Point(188, 321);
-            this.guardianComboBox2.Name = "guardianComboBox2";
-            this.guardianComboBox2.Size = new System.Drawing.Size(169, 30);
-            this.guardianComboBox2.TabIndex = 42;
-            // 
             // lastNameBox
             // 
             this.lastNameBox.Location = new System.Drawing.Point(188, 111);
@@ -116,15 +89,6 @@
             this.lastNameBox.Size = new System.Drawing.Size(169, 29);
             this.lastNameBox.TabIndex = 25;
             this.lastNameBox.Leave += new System.EventHandler(this.lastNameBox_Leave);
-            // 
-            // guardianLabel2
-            // 
-            this.guardianLabel2.AutoSize = true;
-            this.guardianLabel2.Location = new System.Drawing.Point(35, 325);
-            this.guardianLabel2.Name = "guardianLabel2";
-            this.guardianLabel2.Size = new System.Drawing.Size(147, 22);
-            this.guardianLabel2.TabIndex = 41;
-            this.guardianLabel2.Text = "Vårdnadshavare 2";
             // 
             // lastNameLabel
             // 
@@ -135,14 +99,6 @@
             this.lastNameLabel.TabIndex = 26;
             this.lastNameLabel.Text = "Efternamn";
             // 
-            // guardianComboBox
-            // 
-            this.guardianComboBox.FormattingEnabled = true;
-            this.guardianComboBox.Location = new System.Drawing.Point(188, 272);
-            this.guardianComboBox.Name = "guardianComboBox";
-            this.guardianComboBox.Size = new System.Drawing.Size(169, 30);
-            this.guardianComboBox.TabIndex = 40;
-            // 
             // perNumBox
             // 
             this.perNumBox.Location = new System.Drawing.Point(188, 159);
@@ -150,15 +106,6 @@
             this.perNumBox.Size = new System.Drawing.Size(169, 29);
             this.perNumBox.TabIndex = 27;
             this.perNumBox.TextChanged += new System.EventHandler(this.perNumBox_TextChanged);
-            // 
-            // guardianLabel
-            // 
-            this.guardianLabel.AutoSize = true;
-            this.guardianLabel.Location = new System.Drawing.Point(35, 274);
-            this.guardianLabel.Name = "guardianLabel";
-            this.guardianLabel.Size = new System.Drawing.Size(147, 22);
-            this.guardianLabel.TabIndex = 39;
-            this.guardianLabel.Text = "Vårdnadshavare 1";
             // 
             // perNumLabel
             // 
@@ -195,17 +142,6 @@
             this.applicationLabel.Size = new System.Drawing.Size(147, 22);
             this.applicationLabel.TabIndex = 37;
             this.applicationLabel.Text = "Ansökningsdatum";
-            // 
-            // publicCheckBox
-            // 
-            this.publicCheckBox.AutoSize = true;
-            this.publicCheckBox.Location = new System.Drawing.Point(451, 63);
-            this.publicCheckBox.Name = "publicCheckBox";
-            this.publicCheckBox.Size = new System.Drawing.Size(149, 26);
-            this.publicCheckBox.TabIndex = 30;
-            this.publicCheckBox.Text = "Allmän förskola";
-            this.publicCheckBox.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.publicCheckBox.UseVisualStyleBackColor = true;
             // 
             // applicationDatePicker
             // 
@@ -246,52 +182,22 @@
             this.endDatePicker.Size = new System.Drawing.Size(281, 29);
             this.endDatePicker.TabIndex = 34;
             // 
-            // radBtnBillRecipent
-            // 
-            this.radBtnBillRecipent.AutoSize = true;
-            this.radBtnBillRecipent.Location = new System.Drawing.Point(363, 272);
-            this.radBtnBillRecipent.Name = "radBtnBillRecipent";
-            this.radBtnBillRecipent.Size = new System.Drawing.Size(173, 26);
-            this.radBtnBillRecipent.TabIndex = 45;
-            this.radBtnBillRecipent.TabStop = true;
-            this.radBtnBillRecipent.Text = "Räkningsmotagare";
-            this.radBtnBillRecipent.UseVisualStyleBackColor = true;
-            // 
-            // radBtnBillRecipent2
-            // 
-            this.radBtnBillRecipent2.AutoSize = true;
-            this.radBtnBillRecipent2.Location = new System.Drawing.Point(363, 323);
-            this.radBtnBillRecipent2.Name = "radBtnBillRecipent2";
-            this.radBtnBillRecipent2.Size = new System.Drawing.Size(173, 26);
-            this.radBtnBillRecipent2.TabIndex = 46;
-            this.radBtnBillRecipent2.TabStop = true;
-            this.radBtnBillRecipent2.Text = "Räkningsmotagare";
-            this.radBtnBillRecipent2.UseVisualStyleBackColor = true;
-            // 
             // FormAddChild
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 603);
-            this.Controls.Add(this.radBtnBillRecipent2);
-            this.Controls.Add(this.radBtnBillRecipent);
-            this.Controls.Add(this.fifteenHCheckBox);
             this.Controls.Add(this.perNumHelpLabel);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.addChildButton);
             this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.guardianComboBox2);
             this.Controls.Add(this.lastNameBox);
-            this.Controls.Add(this.guardianLabel2);
             this.Controls.Add(this.lastNameLabel);
-            this.Controls.Add(this.guardianComboBox);
             this.Controls.Add(this.perNumBox);
-            this.Controls.Add(this.guardianLabel);
             this.Controls.Add(this.perNumLabel);
             this.Controls.Add(this.groupComboBox);
             this.Controls.Add(this.groupLabel);
             this.Controls.Add(this.applicationLabel);
-            this.Controls.Add(this.publicCheckBox);
             this.Controls.Add(this.applicationDatePicker);
             this.Controls.Add(this.startDatePicker);
             this.Controls.Add(this.endLabel);
@@ -307,30 +213,21 @@
         }
 
         #endregion
-
-        private CheckBox fifteenHCheckBox;
         private Label perNumHelpLabel;
         private TextBox nameBox;
         private Button addChildButton;
         private Label nameLabel;
-        private ComboBox guardianComboBox2;
         private TextBox lastNameBox;
-        private Label guardianLabel2;
         private Label lastNameLabel;
-        private ComboBox guardianComboBox;
         private TextBox perNumBox;
-        private Label guardianLabel;
         private Label perNumLabel;
         private ComboBox groupComboBox;
         private Label groupLabel;
         private Label applicationLabel;
-        private CheckBox publicCheckBox;
         private DateTimePicker applicationDatePicker;
         private DateTimePicker startDatePicker;
         private Label endLabel;
         private Label startLabel;
         private DateTimePicker endDatePicker;
-        private RadioButton radBtnBillRecipent;
-        private RadioButton radBtnBillRecipent2;
     }
 }

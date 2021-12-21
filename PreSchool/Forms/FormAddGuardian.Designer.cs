@@ -121,7 +121,6 @@
             this.comboBoxGuardFor.Name = "comboBoxGuardFor";
             this.comboBoxGuardFor.Size = new System.Drawing.Size(169, 28);
             this.comboBoxGuardFor.TabIndex = 62;
-            this.comboBoxGuardFor.TextUpdate += new System.EventHandler(this.comboBoxGuardFor_TextUpdate);
             // 
             // groupLabel
             // 

@@ -10,7 +10,6 @@
         {
             get { return PeopleHelper.GetAge(PersonalNumber); }
         }
-
         public List<Guardian> Guardians { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
@@ -63,8 +62,6 @@
         public string PhoneNumber { get; set; } = "";
         public string Group { get; set; } = "";
         public string Child { get; set; } = "";
-        public string Guardian1 { get; set; } = "";
-        public string Guardian2 { get; set; } = "";
     }
 
     public class PeopleHelper   //Hallå vart tog referenslänken vägen??? Fixa

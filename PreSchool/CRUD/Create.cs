@@ -18,11 +18,8 @@ namespace PreSchool.CRUD
                     FirstName = childInput.FirstName,
                     LastName = childInput.LastName,
                     PersonalNumber = childInput.PersonalNumber,
-                    PublicPreSchool = childInput.PublicPreSchool,
-                    FifteenHours = childInput.FifteenHours,
                     StartDate = childInput.StartDate,
                     EndDate = childInput.EndDate,
-                    //BillRecipent = childInput.BillRecipent,
                     ApplicationDate = childInput.ApplicationDate
                 });
 

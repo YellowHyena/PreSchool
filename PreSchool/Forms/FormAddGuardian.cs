@@ -28,22 +28,5 @@ namespace PreSchool.Forms
                 }
             }
         }
-
-        //private void comboBoxGuardFor_TextUpdate(object sender, EventArgs e)
-        //{
-        //    using var db = new SchoolContext();
-
-        //    string input = comboBoxGuardFor.Text;
-        //    if (!string.IsNullOrEmpty(input))
-        //    {
-        //        var list = db.Guardians.Where(g => g.LastName.Contains(input));
-        //        comboBoxGuardFor.Items.Clear();
-
-        //        foreach (var child in db.Children)
-        //        {
-        //            comboBoxGuardFor.Items.Add(child.FirstName + " " + child.LastName);
-        //        }
-        //    }
-        //}
     }
 }
