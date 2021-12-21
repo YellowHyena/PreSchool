@@ -40,14 +40,10 @@ namespace PreSchool
                 StartDate = startDatePicker.Value,
                 EndDate = endDatePicker.Value,
                 ApplicationDate = applicationDatePicker.Value,
-                PublicPreSchool = publicCheckBox.Checked,
-                FifteenHours = fifteenHCheckBox.Checked,
                 Group = groupComboBox.Text,
                 Guardian1 = guardianComboBox.Text,
                 Guardian2 = guardianComboBox2.Text
             };
-            if (radBtnBillRecipent.Checked == true) tempChild.BillRecipent = tempChild.Guardian1;
-            else if (radBtnBillRecipent2.Checked == true) tempChild.BillRecipent = tempChild.Guardian2;
 
             return tempChild;
         }
