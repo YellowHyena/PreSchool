@@ -31,7 +31,9 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxFilterGroup = new System.Windows.Forms.ComboBox();
+            this.checkBoxFilterGroup = new System.Windows.Forms.CheckBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // listBox1
@@ -54,25 +56,51 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(225, 515);
+            this.textBox1.Location = new System.Drawing.Point(523, 468);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(125, 27);
             this.textBox1.TabIndex = 2;
             // 
-            // comboBox1
+            // comboBoxFilterGroup
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(225, 451);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 3;
+            this.comboBoxFilterGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFilterGroup.Enabled = false;
+            this.comboBoxFilterGroup.FormattingEnabled = true;
+            this.comboBoxFilterGroup.Location = new System.Drawing.Point(147, 469);
+            this.comboBoxFilterGroup.Name = "comboBoxFilterGroup";
+            this.comboBoxFilterGroup.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxFilterGroup.TabIndex = 3;
+            this.comboBoxFilterGroup.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilterGroup_SelectedIndexChanged);
+            // 
+            // checkBoxFilterGroup
+            // 
+            this.checkBoxFilterGroup.AutoSize = true;
+            this.checkBoxFilterGroup.Location = new System.Drawing.Point(39, 471);
+            this.checkBoxFilterGroup.Name = "checkBoxFilterGroup";
+            this.checkBoxFilterGroup.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBoxFilterGroup.Size = new System.Drawing.Size(102, 24);
+            this.checkBoxFilterGroup.TabIndex = 4;
+            this.checkBoxFilterGroup.Text = "Visa grupp";
+            this.checkBoxFilterGroup.UseVisualStyleBackColor = true;
+            this.checkBoxFilterGroup.CheckedChanged += new System.EventHandler(this.checkBoxFilterGroup_CheckedChanged);
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 20;
+            this.listBox3.Location = new System.Drawing.Point(430, 42);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(156, 364);
+            this.listBox3.TabIndex = 5;
             // 
             // FormViewAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 603);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.listBox3);
+            this.Controls.Add(this.checkBoxFilterGroup);
+            this.Controls.Add(this.comboBoxFilterGroup);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
@@ -89,6 +117,8 @@
         private ListBox listBox1;
         private ListBox listBox2;
         private TextBox textBox1;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxFilterGroup;
+        private CheckBox checkBoxFilterGroup;
+        private ListBox listBox3;
     }
 }

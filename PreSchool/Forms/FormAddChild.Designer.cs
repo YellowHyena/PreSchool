@@ -50,6 +50,8 @@
             this.endLabel = new System.Windows.Forms.Label();
             this.startLabel = new System.Windows.Forms.Label();
             this.endDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.radBtnBillRecipent = new System.Windows.Forms.RadioButton();
+            this.radBtnBillRecipent2 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // fifteenHCheckBox
@@ -244,11 +246,35 @@
             this.endDatePicker.Size = new System.Drawing.Size(281, 29);
             this.endDatePicker.TabIndex = 34;
             // 
+            // radBtnBillRecipent
+            // 
+            this.radBtnBillRecipent.AutoSize = true;
+            this.radBtnBillRecipent.Location = new System.Drawing.Point(363, 272);
+            this.radBtnBillRecipent.Name = "radBtnBillRecipent";
+            this.radBtnBillRecipent.Size = new System.Drawing.Size(173, 26);
+            this.radBtnBillRecipent.TabIndex = 45;
+            this.radBtnBillRecipent.TabStop = true;
+            this.radBtnBillRecipent.Text = "Räkningsmotagare";
+            this.radBtnBillRecipent.UseVisualStyleBackColor = true;
+            // 
+            // radBtnBillRecipent2
+            // 
+            this.radBtnBillRecipent2.AutoSize = true;
+            this.radBtnBillRecipent2.Location = new System.Drawing.Point(363, 323);
+            this.radBtnBillRecipent2.Name = "radBtnBillRecipent2";
+            this.radBtnBillRecipent2.Size = new System.Drawing.Size(173, 26);
+            this.radBtnBillRecipent2.TabIndex = 46;
+            this.radBtnBillRecipent2.TabStop = true;
+            this.radBtnBillRecipent2.Text = "Räkningsmotagare";
+            this.radBtnBillRecipent2.UseVisualStyleBackColor = true;
+            // 
             // FormAddChild
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 603);
+            this.Controls.Add(this.radBtnBillRecipent2);
+            this.Controls.Add(this.radBtnBillRecipent);
             this.Controls.Add(this.fifteenHCheckBox);
             this.Controls.Add(this.perNumHelpLabel);
             this.Controls.Add(this.nameBox);
@@ -304,5 +330,7 @@
         private Label endLabel;
         private Label startLabel;
         private DateTimePicker endDatePicker;
+        private RadioButton radBtnBillRecipent;
+        private RadioButton radBtnBillRecipent2;
     }
 }

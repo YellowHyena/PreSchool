@@ -18,9 +18,7 @@
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime ApplicationDate { get; set; }
-
         public List<Group> Groups { get; set; }
-        public string Group { get; set; } = "";
 
         public int BillRecipent { get; set; } //adultid
     }
@@ -62,16 +60,16 @@
         }
 
         public List<Address> AddressesInfo { get; set; }
-        public string Group { get; set; } = "";
         public string PhoneNumber { get; set; } = "";
         public DateTime EmployementDate { get; set; }
+        public List<Group> Groups { get; set; }
     }
 
     public class Dummy
     {
         public string FirstName { get; set; } = "";
         public string LastName { get; set; } = "";
-        public string PersonalNumber { get; set; } = "";
+        public long PersonalNumber { get; set; }
         public bool PublicPreSchool { get; set; } = false;
         public bool FifteenHours { get; set; } = false;
         public DateTime StartDate { get; set; }
