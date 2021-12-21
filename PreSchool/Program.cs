@@ -1,6 +1,6 @@
 namespace PreSchool
 {
-    using PreSchool.Models;
+    using PreSchool.Utils;
     internal static class Program
     {
         /// <summary>
@@ -9,7 +9,7 @@ namespace PreSchool
         [STAThread]
         static void Main()
         {
-            Group.CreateGroups();
+            StartupTask.CreateGroups();
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }

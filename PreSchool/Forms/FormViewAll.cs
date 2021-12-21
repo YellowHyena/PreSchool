@@ -12,26 +12,39 @@ namespace PreSchool
 
         private void FormViewAll_Load(object sender, EventArgs e)
         {
-            using (var db = new SchoolContext())
-            {
-                foreach (var group in db.Groups) //Adds groups to combobox
-                {
-                    comboBoxFilterGroup.Items.Add(group.Name);
-                }
+                AddGroupsToComboBox();
+                AddChildrenToComboBox();
+        }
 
-                string name = "";
-                foreach (var child in db.Children)
-                {
-                    name = child.FirstName + " " + child.LastName;
-                    listBox1.Items.Add(name);
-                }
+        private void AddGroupsToComboBox()
+        {
+            using var db = new SchoolContext();
+            foreach (var group in db.Groups) //Adds groups to combobox
+            {
+                comboBoxFilterGroup.Items.Add(group.Name);
+            }
+        }
+
+        private void AddChildrenToComboBox()
+        {
+            using var db = new SchoolContext();
+            foreach (var child in db.Children) //Adds children to listbox1
+            {
+                string name = child.FirstName + " " + child.LastName;
+                listBox1.Items.Add(name);
             }
         }
 
         private void checkBoxFilterGroup_CheckedChanged(object sender, EventArgs e)
         {
             comboBoxFilterGroup.Enabled = checkBoxFilterGroup.Checked;
-            //if (checkBoxFilterGroup.Checked==false)
+            if (checkBoxFilterGroup.Checked==false)
+            {
+                listBox1.Items.Clear();
+                listBox2.Items.Clear();
+                listBox3.Items.Clear();
+                AddChildrenToComboBox();
+            }
         }
 
         private void comboBoxFilterGroup_SelectedIndexChanged(object sender, EventArgs e)

@@ -38,13 +38,9 @@
 
         public List<Child> Children { get; set; }
 
-        public string IncomeInfo { get; set; } = "";
-
         public string PhoneNumber { get; set; } = "";
 
         public int DebitFee { get; set; }
-
-
     }
 
     public class Employee

@@ -1,3 +1,5 @@
+using PreSchool.Forms;
+
 namespace PreSchool
 {
     public partial class Form1 : Form
@@ -74,6 +76,7 @@ namespace PreSchool
 
         private void btnAddGuardian_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new FormAddGuardian());
             HideSubMenu();
         }
 
