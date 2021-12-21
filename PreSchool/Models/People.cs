@@ -59,6 +59,7 @@
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime ApplicationDate { get; set; }
+        public DateTime EmployementDate { get; set; }
         public string PhoneNumber { get; set; } = "";
         public string Group { get; set; } = "";
         public string Child { get; set; } = "";

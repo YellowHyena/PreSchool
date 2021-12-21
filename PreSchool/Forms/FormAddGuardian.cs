@@ -1,4 +1,6 @@
-﻿using PreSchool.Database;
+﻿using PreSchool.CRUD;
+using PreSchool.Database;
+using PreSchool.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,5 +30,31 @@ namespace PreSchool.Forms
                 }
             }
         }
+        private void perNumBox_TextChanged(object sender, EventArgs e) //Checks if personal number has a letter in it. NOTE: MAYBE ADD MAXIMUM AND MINIMUM LENGTH?
+        {
+            bool number = long.TryParse(perNumBox.Text, out long perNum);
+            if (number == true || perNumBox.Text == "") perNumHelpLabel.Visible = false;
+            else perNumHelpLabel.Visible = true;
+        }
+
+        public Dummy GuardianInfo() //Using dummy to indicate that this is just information and not a person
+        {
+
+            var tempGuardian = new Dummy
+            {
+                Child = comboBoxGuardFor.Text,
+                FirstName = nameBox.Text,
+                LastName = lastNameBox.Text,
+                PersonalNumber = long.Parse(perNumBox.Text),
+                PhoneNumber = textBoxPhone.Text,
+            };
+            return tempGuardian;
+        }
+
+        private void addGuardianButton_Click(object sender, EventArgs e)
+        {
+            Create.Child(GuardianInfo());
+        }
+
     }
 }
