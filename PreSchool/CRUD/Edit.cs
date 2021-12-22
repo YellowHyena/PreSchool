@@ -24,8 +24,8 @@ namespace PreSchool.CRUD
             child = db.Children.Include("Groups").FirstOrDefault(s => s.Id == dummy.Id);
             EditChildGroup(child, dummy.Group);
         }
-        https://www.youtube.com/watch?v=dQw4w9WgXcQ
-        public static void EditChildGroup(Child child, string dummyGroup)
+        
+        public static void EditChildGroup(Child child, string dummyGroup) //https://www.youtube.com/watch?v=dQw4w9WgXcQ
         {
             using var db = new SchoolContext();
             db.Children.Attach(child);
