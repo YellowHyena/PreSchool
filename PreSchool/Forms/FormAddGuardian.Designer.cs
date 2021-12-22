@@ -46,25 +46,25 @@
             // perNumHelpLabel
             // 
             this.perNumHelpLabel.AutoSize = true;
-            this.perNumHelpLabel.Location = new System.Drawing.Point(461, 275);
+            this.perNumHelpLabel.Location = new System.Drawing.Point(522, 263);
             this.perNumHelpLabel.Name = "perNumHelpLabel";
-            this.perNumHelpLabel.Size = new System.Drawing.Size(99, 20);
+            this.perNumHelpLabel.Size = new System.Drawing.Size(112, 20);
             this.perNumHelpLabel.TabIndex = 68;
             this.perNumHelpLabel.Text = "Enbart siffror!";
             this.perNumHelpLabel.Visible = false;
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(284, 177);
+            this.nameBox.Location = new System.Drawing.Point(301, 165);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(169, 27);
+            this.nameBox.Size = new System.Drawing.Size(211, 26);
             this.nameBox.TabIndex = 47;
             // 
             // addGuardianButton
             // 
-            this.addGuardianButton.Location = new System.Drawing.Point(284, 443);
+            this.addGuardianButton.Location = new System.Drawing.Point(301, 431);
             this.addGuardianButton.Name = "addGuardianButton";
-            this.addGuardianButton.Size = new System.Drawing.Size(106, 32);
+            this.addGuardianButton.Size = new System.Drawing.Size(132, 32);
             this.addGuardianButton.TabIndex = 67;
             this.addGuardianButton.Text = "Add";
             this.addGuardianButton.UseVisualStyleBackColor = true;
@@ -73,42 +73,42 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(211, 177);
+            this.nameLabel.Location = new System.Drawing.Point(208, 165);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(49, 20);
+            this.nameLabel.Size = new System.Drawing.Size(53, 20);
             this.nameLabel.TabIndex = 48;
             this.nameLabel.Text = "Namn";
             // 
             // lastNameBox
             // 
-            this.lastNameBox.Location = new System.Drawing.Point(284, 224);
+            this.lastNameBox.Location = new System.Drawing.Point(301, 212);
             this.lastNameBox.Name = "lastNameBox";
-            this.lastNameBox.Size = new System.Drawing.Size(169, 27);
+            this.lastNameBox.Size = new System.Drawing.Size(211, 26);
             this.lastNameBox.TabIndex = 49;
             // 
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(180, 231);
+            this.lastNameLabel.Location = new System.Drawing.Point(169, 219);
             this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(77, 20);
+            this.lastNameLabel.Size = new System.Drawing.Size(86, 20);
             this.lastNameLabel.TabIndex = 50;
             this.lastNameLabel.Text = "Efternamn";
             // 
             // perNumBox
             // 
-            this.perNumBox.Location = new System.Drawing.Point(284, 272);
+            this.perNumBox.Location = new System.Drawing.Point(301, 260);
             this.perNumBox.Name = "perNumBox";
-            this.perNumBox.Size = new System.Drawing.Size(169, 27);
+            this.perNumBox.Size = new System.Drawing.Size(211, 26);
             this.perNumBox.TabIndex = 51;
             this.perNumBox.TextChanged += new System.EventHandler(this.perNumBox_TextChanged);
             // 
             // perNumLabel
             // 
             this.perNumLabel.AutoSize = true;
-            this.perNumLabel.Location = new System.Drawing.Point(146, 279);
+            this.perNumLabel.Location = new System.Drawing.Point(127, 267);
             this.perNumLabel.Name = "perNumLabel";
-            this.perNumLabel.Size = new System.Drawing.Size(107, 20);
+            this.perNumLabel.Size = new System.Drawing.Size(123, 20);
             this.perNumLabel.TabIndex = 52;
             this.perNumLabel.Text = "Personnummer";
             // 
@@ -116,49 +116,49 @@
             // 
             this.comboBoxGuardFor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGuardFor.FormattingEnabled = true;
-            this.comboBoxGuardFor.Location = new System.Drawing.Point(284, 116);
+            this.comboBoxGuardFor.Location = new System.Drawing.Point(301, 104);
             this.comboBoxGuardFor.Name = "comboBoxGuardFor";
-            this.comboBoxGuardFor.Size = new System.Drawing.Size(169, 28);
+            this.comboBoxGuardFor.Size = new System.Drawing.Size(211, 28);
             this.comboBoxGuardFor.TabIndex = 62;
             // 
             // groupLabel
             // 
             this.groupLabel.AutoSize = true;
-            this.groupLabel.Location = new System.Drawing.Point(116, 119);
+            this.groupLabel.Location = new System.Drawing.Point(89, 107);
             this.groupLabel.Name = "groupLabel";
-            this.groupLabel.Size = new System.Drawing.Size(137, 20);
+            this.groupLabel.Size = new System.Drawing.Size(155, 20);
             this.groupLabel.TabIndex = 53;
             this.groupLabel.Text = "Vårdnadshavare för";
             // 
             // labelPhoneCheck
             // 
             this.labelPhoneCheck.AutoSize = true;
-            this.labelPhoneCheck.Location = new System.Drawing.Point(461, 320);
+            this.labelPhoneCheck.Location = new System.Drawing.Point(522, 308);
             this.labelPhoneCheck.Name = "labelPhoneCheck";
-            this.labelPhoneCheck.Size = new System.Drawing.Size(99, 20);
+            this.labelPhoneCheck.Size = new System.Drawing.Size(112, 20);
             this.labelPhoneCheck.TabIndex = 71;
             this.labelPhoneCheck.Text = "Enbart siffror!";
             this.labelPhoneCheck.Visible = false;
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(284, 317);
+            this.textBoxPhone.Location = new System.Drawing.Point(301, 305);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(169, 27);
+            this.textBoxPhone.Size = new System.Drawing.Size(211, 26);
             this.textBoxPhone.TabIndex = 69;
             // 
             // labelPhone
             // 
             this.labelPhone.AutoSize = true;
-            this.labelPhone.Location = new System.Drawing.Point(146, 324);
+            this.labelPhone.Location = new System.Drawing.Point(127, 312);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(113, 20);
+            this.labelPhone.Size = new System.Drawing.Size(125, 20);
             this.labelPhone.TabIndex = 70;
             this.labelPhone.Text = "Telefonnummer";
             // 
             // FormAddGuardian
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 603);
             this.Controls.Add(this.labelPhoneCheck);
@@ -174,6 +174,7 @@
             this.Controls.Add(this.perNumLabel);
             this.Controls.Add(this.comboBoxGuardFor);
             this.Controls.Add(this.groupLabel);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "FormAddGuardian";
             this.Text = "FormAddGuardian";
             this.Load += new System.EventHandler(this.FormAddGuardian_Load);

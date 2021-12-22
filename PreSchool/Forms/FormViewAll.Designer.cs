@@ -40,25 +40,28 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(40, 42);
+            this.listBox1.Location = new System.Drawing.Point(50, 42);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(156, 364);
+            this.listBox1.Size = new System.Drawing.Size(194, 364);
             this.listBox1.TabIndex = 0;
             // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(234, 42);
+            this.listBox2.Location = new System.Drawing.Point(292, 42);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(156, 364);
+            this.listBox2.Size = new System.Drawing.Size(194, 364);
             this.listBox2.TabIndex = 1;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(523, 468);
+            this.textBox1.Location = new System.Drawing.Point(538, 469);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
+            this.textBox1.Size = new System.Drawing.Size(155, 26);
             this.textBox1.TabIndex = 2;
             // 
             // comboBoxFilterGroup
@@ -66,19 +69,21 @@
             this.comboBoxFilterGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFilterGroup.Enabled = false;
             this.comboBoxFilterGroup.FormattingEnabled = true;
-            this.comboBoxFilterGroup.Location = new System.Drawing.Point(147, 469);
+            this.comboBoxFilterGroup.Location = new System.Drawing.Point(184, 469);
+            this.comboBoxFilterGroup.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.comboBoxFilterGroup.Name = "comboBoxFilterGroup";
-            this.comboBoxFilterGroup.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxFilterGroup.Size = new System.Drawing.Size(188, 28);
             this.comboBoxFilterGroup.TabIndex = 3;
             this.comboBoxFilterGroup.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilterGroup_SelectedIndexChanged);
             // 
             // checkBoxFilterGroup
             // 
             this.checkBoxFilterGroup.AutoSize = true;
-            this.checkBoxFilterGroup.Location = new System.Drawing.Point(39, 471);
+            this.checkBoxFilterGroup.Location = new System.Drawing.Point(49, 471);
+            this.checkBoxFilterGroup.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.checkBoxFilterGroup.Name = "checkBoxFilterGroup";
             this.checkBoxFilterGroup.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBoxFilterGroup.Size = new System.Drawing.Size(102, 24);
+            this.checkBoxFilterGroup.Size = new System.Drawing.Size(111, 24);
             this.checkBoxFilterGroup.TabIndex = 4;
             this.checkBoxFilterGroup.Text = "Visa grupp";
             this.checkBoxFilterGroup.UseVisualStyleBackColor = true;
@@ -88,14 +93,15 @@
             // 
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 20;
-            this.listBox3.Location = new System.Drawing.Point(430, 42);
+            this.listBox3.Location = new System.Drawing.Point(538, 42);
+            this.listBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(156, 364);
+            this.listBox3.Size = new System.Drawing.Size(194, 364);
             this.listBox3.TabIndex = 5;
             // 
             // FormViewAll
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 603);
             this.Controls.Add(this.listBox3);
@@ -104,6 +110,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FormViewAll";
             this.Text = "FormViewAll";
             this.Load += new System.EventHandler(this.FormViewAll_Load);

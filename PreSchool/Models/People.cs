@@ -65,7 +65,7 @@
         public string Child { get; set; } = "";
     }
 
-    public class PeopleHelper   //Hallå vart tog referenslänken vägen??? Fixa
+    internal class PeopleHelper   //Hallå vart tog referenslänken vägen??? Fixa PLUS ATT DET INTE ENS FUNKAR?????
     {
         public static int GetAge(long personalNumber)
         {

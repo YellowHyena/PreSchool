@@ -49,25 +49,26 @@
             // perNumHelpLabel
             // 
             this.perNumHelpLabel.AutoSize = true;
-            this.perNumHelpLabel.Location = new System.Drawing.Point(392, 159);
+            this.perNumHelpLabel.Location = new System.Drawing.Point(436, 145);
             this.perNumHelpLabel.Name = "perNumHelpLabel";
-            this.perNumHelpLabel.Size = new System.Drawing.Size(113, 22);
+            this.perNumHelpLabel.Size = new System.Drawing.Size(112, 20);
             this.perNumHelpLabel.TabIndex = 44;
             this.perNumHelpLabel.Text = "Enbart siffror!";
             this.perNumHelpLabel.Visible = false;
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(215, 61);
+            this.nameBox.Location = new System.Drawing.Point(239, 55);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(169, 29);
+            this.nameBox.Size = new System.Drawing.Size(187, 27);
             this.nameBox.TabIndex = 23;
             // 
             // addChildButton
             // 
-            this.addChildButton.Location = new System.Drawing.Point(215, 416);
+            this.addChildButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addChildButton.Location = new System.Drawing.Point(239, 378);
             this.addChildButton.Name = "addChildButton";
-            this.addChildButton.Size = new System.Drawing.Size(106, 32);
+            this.addChildButton.Size = new System.Drawing.Size(118, 29);
             this.addChildButton.TabIndex = 43;
             this.addChildButton.Text = "Add";
             this.addChildButton.UseVisualStyleBackColor = true;
@@ -76,42 +77,42 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(142, 61);
+            this.nameLabel.Location = new System.Drawing.Point(158, 55);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(57, 22);
+            this.nameLabel.Size = new System.Drawing.Size(53, 20);
             this.nameLabel.TabIndex = 24;
             this.nameLabel.Text = "Namn";
             // 
             // lastNameBox
             // 
-            this.lastNameBox.Location = new System.Drawing.Point(215, 108);
+            this.lastNameBox.Location = new System.Drawing.Point(239, 98);
             this.lastNameBox.Name = "lastNameBox";
-            this.lastNameBox.Size = new System.Drawing.Size(169, 29);
+            this.lastNameBox.Size = new System.Drawing.Size(187, 27);
             this.lastNameBox.TabIndex = 25;
             // 
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(111, 115);
+            this.lastNameLabel.Location = new System.Drawing.Point(123, 105);
             this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(89, 22);
+            this.lastNameLabel.Size = new System.Drawing.Size(86, 20);
             this.lastNameLabel.TabIndex = 26;
             this.lastNameLabel.Text = "Efternamn";
             // 
             // perNumBox
             // 
-            this.perNumBox.Location = new System.Drawing.Point(215, 156);
+            this.perNumBox.Location = new System.Drawing.Point(239, 142);
             this.perNumBox.Name = "perNumBox";
-            this.perNumBox.Size = new System.Drawing.Size(169, 29);
+            this.perNumBox.Size = new System.Drawing.Size(187, 27);
             this.perNumBox.TabIndex = 27;
             this.perNumBox.TextChanged += new System.EventHandler(this.perNumBox_TextChanged);
             // 
             // perNumLabel
             // 
             this.perNumLabel.AutoSize = true;
-            this.perNumLabel.Location = new System.Drawing.Point(77, 163);
+            this.perNumLabel.Location = new System.Drawing.Point(86, 148);
             this.perNumLabel.Name = "perNumLabel";
-            this.perNumLabel.Size = new System.Drawing.Size(127, 22);
+            this.perNumLabel.Size = new System.Drawing.Size(123, 20);
             this.perNumLabel.TabIndex = 28;
             this.perNumLabel.Text = "Personnummer";
             // 
@@ -119,71 +120,71 @@
             // 
             this.groupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.groupComboBox.FormattingEnabled = true;
-            this.groupComboBox.Location = new System.Drawing.Point(215, 204);
+            this.groupComboBox.Location = new System.Drawing.Point(239, 185);
             this.groupComboBox.Name = "groupComboBox";
-            this.groupComboBox.Size = new System.Drawing.Size(169, 30);
+            this.groupComboBox.Size = new System.Drawing.Size(187, 28);
             this.groupComboBox.TabIndex = 38;
             // 
             // groupLabel
             // 
             this.groupLabel.AutoSize = true;
-            this.groupLabel.Location = new System.Drawing.Point(112, 207);
+            this.groupLabel.Location = new System.Drawing.Point(124, 188);
             this.groupLabel.Name = "groupLabel";
-            this.groupLabel.Size = new System.Drawing.Size(86, 22);
+            this.groupLabel.Size = new System.Drawing.Size(81, 20);
             this.groupLabel.TabIndex = 29;
             this.groupLabel.Text = "Avdelning";
             // 
             // applicationLabel
             // 
             this.applicationLabel.AutoSize = true;
-            this.applicationLabel.Location = new System.Drawing.Point(66, 358);
+            this.applicationLabel.Location = new System.Drawing.Point(73, 325);
             this.applicationLabel.Name = "applicationLabel";
-            this.applicationLabel.Size = new System.Drawing.Size(147, 22);
+            this.applicationLabel.Size = new System.Drawing.Size(141, 20);
             this.applicationLabel.TabIndex = 37;
             this.applicationLabel.Text = "Ansökningsdatum";
             // 
             // applicationDatePicker
             // 
-            this.applicationDatePicker.Location = new System.Drawing.Point(215, 350);
+            this.applicationDatePicker.Location = new System.Drawing.Point(239, 318);
             this.applicationDatePicker.Name = "applicationDatePicker";
-            this.applicationDatePicker.Size = new System.Drawing.Size(281, 29);
+            this.applicationDatePicker.Size = new System.Drawing.Size(312, 27);
             this.applicationDatePicker.TabIndex = 36;
             // 
             // startDatePicker
             // 
-            this.startDatePicker.Location = new System.Drawing.Point(215, 257);
+            this.startDatePicker.Location = new System.Drawing.Point(239, 234);
             this.startDatePicker.Name = "startDatePicker";
-            this.startDatePicker.Size = new System.Drawing.Size(281, 29);
+            this.startDatePicker.Size = new System.Drawing.Size(312, 27);
             this.startDatePicker.TabIndex = 32;
             // 
             // endLabel
             // 
             this.endLabel.AutoSize = true;
-            this.endLabel.Location = new System.Drawing.Point(111, 309);
+            this.endLabel.Location = new System.Drawing.Point(123, 281);
             this.endLabel.Name = "endLabel";
-            this.endLabel.Size = new System.Drawing.Size(89, 22);
+            this.endLabel.Size = new System.Drawing.Size(84, 20);
             this.endLabel.TabIndex = 35;
             this.endLabel.Text = "Slutdatum";
             // 
             // startLabel
             // 
             this.startLabel.AutoSize = true;
-            this.startLabel.Location = new System.Drawing.Point(111, 263);
+            this.startLabel.Location = new System.Drawing.Point(123, 239);
             this.startLabel.Name = "startLabel";
-            this.startLabel.Size = new System.Drawing.Size(96, 22);
+            this.startLabel.Size = new System.Drawing.Size(91, 20);
             this.startLabel.TabIndex = 33;
             this.startLabel.Text = "Startdatum";
             // 
             // endDatePicker
             // 
-            this.endDatePicker.Location = new System.Drawing.Point(215, 303);
+            this.endDatePicker.Location = new System.Drawing.Point(239, 275);
             this.endDatePicker.Name = "endDatePicker";
-            this.endDatePicker.Size = new System.Drawing.Size(281, 29);
+            this.endDatePicker.Size = new System.Drawing.Size(312, 27);
             this.endDatePicker.TabIndex = 34;
             // 
             // FormAddChild
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 603);
             this.Controls.Add(this.perNumHelpLabel);
@@ -202,7 +203,7 @@
             this.Controls.Add(this.endLabel);
             this.Controls.Add(this.startLabel);
             this.Controls.Add(this.endDatePicker);
-            this.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "FormAddChild";
             this.Text = "AddChild";
             this.Load += new System.EventHandler(this.FormAddChild_Load);

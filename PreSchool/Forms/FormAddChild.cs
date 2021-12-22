@@ -31,8 +31,7 @@ namespace PreSchool
 
         public Dummy ChildInfo() //Using dummy to indicate that this is just information and not a person
         {
-
-            var tempChild = new Dummy
+            var dummyChild = new Dummy
             {
                 FirstName = nameBox.Text,
                 LastName = lastNameBox.Text,
@@ -43,7 +42,7 @@ namespace PreSchool
                 Group = groupComboBox.Text
             };
 
-            return tempChild;
+            return dummyChild;
         }
 
         private void addChildButton_Click(object sender, EventArgs e)

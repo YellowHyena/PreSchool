@@ -40,7 +40,7 @@ namespace PreSchool.Forms
         public Dummy GuardianInfo() //Using dummy to indicate that this is just information and not a person
         {
 
-            var tempGuardian = new Dummy
+            var dummyGuardian = new Dummy
             {
                 Child = comboBoxGuardFor.Text,
                 FirstName = nameBox.Text,
@@ -48,12 +48,12 @@ namespace PreSchool.Forms
                 PersonalNumber = long.Parse(perNumBox.Text),
                 PhoneNumber = textBoxPhone.Text,
             };
-            return tempGuardian;
+            return dummyGuardian;
         }
 
         private void addGuardianButton_Click(object sender, EventArgs e)
         {
-            Create.Child(GuardianInfo());
+            Create.Guardian(GuardianInfo());
         }
 
     }
