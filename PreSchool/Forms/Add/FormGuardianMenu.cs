@@ -101,6 +101,18 @@ namespace PreSchool.Forms
 
             func(Controls);
         }
+        private bool CheckIfTextEmpty() //https://stackoverflow.com/a/8750307
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = control as TextBox;
+                    if (textBox.Text == string.Empty) return true;
+                }
+            };
+            return false;
+        }
         private Guardian GetGuardianFromComboBox()
         {
             using var db = new SchoolContext();
@@ -125,10 +137,14 @@ namespace PreSchool.Forms
 
         private void GuardianActionButton_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked) Create.Guardian(GuardianInfo());
-            else if (radioButton2.Checked) Edit.Guardian(GuardianInfo());
-            else if (radioButton3.Checked) Delete.Guardian(GetGuardianFromComboBox());//only need what person the combobox shows
-            MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
+            if (CheckIfTextEmpty() == false)
+            {
+                if (radioButton1.Checked) Create.Guardian(GuardianInfo());
+                else if (radioButton2.Checked) Edit.Guardian(GuardianInfo());
+                else if (radioButton3.Checked) Delete.Guardian(GetGuardianFromComboBox());//only need what person the combobox shows
+                MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
+            }
+            else MessageBox.Show("Fyll i all information");
         }
     }
 }

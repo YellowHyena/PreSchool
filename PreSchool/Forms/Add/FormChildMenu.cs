@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PreSchool.CRUD;
+﻿using PreSchool.CRUD;
 using PreSchool.Database;
 using PreSchool.Models;
 
@@ -21,7 +20,7 @@ namespace PreSchool
                 }
                 foreach (var child in db.Children)
                 {
-                    comboBox1.Items.Add(child.FirstName +" "+ child.LastName);
+                    comboBox1.Items.Add(child.FirstName + " " + child.LastName);
                 }
             }
         }
@@ -43,7 +42,7 @@ namespace PreSchool
                 StartDate = startDatePicker.Value,
                 EndDate = endDatePicker.Value,
                 ApplicationDate = applicationDatePicker.Value,
-                Group = groupComboBox.Text             
+                Group = groupComboBox.Text
             };
             if (!radioButton1.Checked) dummyChild.Id = GetChildFromComboBox().Id;
             return dummyChild;
@@ -51,10 +50,14 @@ namespace PreSchool
 
         private void ChildActionButton_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked) Create.Child(ChildInfo());
-            else if (radioButton2.Checked) Edit.Child(ChildInfo());
-            else if (radioButton3.Checked) Delete.Child(GetChildFromComboBox()); //only need what person the combobox shows
-            MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
+            if (CheckIfTextEmpty() == false)
+            {
+                if (radioButton1.Checked) Create.Child(ChildInfo());
+                else if (radioButton2.Checked) Edit.Child(ChildInfo());
+                else if (radioButton3.Checked) Delete.Child(GetChildFromComboBox()); //only need what person the combobox shows
+                MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
+            }
+            else MessageBox.Show("Fyll i all information");
         }
 
         #region Action
@@ -74,7 +77,7 @@ namespace PreSchool
         }
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            childActionButton.Visible = true; 
+            childActionButton.Visible = true;
             RadioBtnLocation(108);
             childActionButton.Text = "Ta bort";
         }
@@ -100,6 +103,18 @@ namespace PreSchool
             };
 
             func(Controls);
+        }
+        private bool CheckIfTextEmpty() //https://stackoverflow.com/a/8750307
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = control as TextBox;
+                    if (textBox.Text == string.Empty) return true;
+                }
+            };
+            return false;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

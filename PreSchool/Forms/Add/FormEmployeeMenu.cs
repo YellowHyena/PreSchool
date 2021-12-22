@@ -41,11 +41,14 @@ namespace PreSchool.Forms
         }
         private void employeeActionButton_Click(object sender, EventArgs e)
         {
-            
-            if (radioButton1.Checked) Create.Employee(EmployeeInfo());
-            else if (radioButton2.Checked) Edit.Employee(EmployeeInfo());
-            else if (radioButton3.Checked) Delete.Employee(GetEmployeeFromComboBox());//only need what person the combobox shows
-            MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
+            if (CheckIfTextEmpty() == false)
+            {
+                if (radioButton1.Checked) Create.Employee(EmployeeInfo());
+                else if (radioButton2.Checked) Edit.Employee(EmployeeInfo());
+                else if (radioButton3.Checked) Delete.Employee(GetEmployeeFromComboBox());//only need what person the combobox shows
+                MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
+            }
+            else MessageBox.Show("Fyll i all information");
         }
 
         #region ActionChoice
@@ -90,6 +93,18 @@ namespace PreSchool.Forms
             };
 
             func(Controls);
+        }
+        private bool CheckIfTextEmpty() //https://stackoverflow.com/a/8750307
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = control as TextBox;
+                    if (textBox.Text == string.Empty) return true;
+                }
+            };
+            return false;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
