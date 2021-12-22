@@ -70,7 +70,7 @@ namespace PreSchool
         }
         private void btnAddChildForm_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormAddChild());
+            OpenChildForm(new FormChildMenu());
             HideSubMenu();
         }
 
@@ -82,6 +82,7 @@ namespace PreSchool
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new FormAddEmployee());
             HideSubMenu();
         }
 

@@ -45,6 +45,10 @@ namespace PreSchool
                 listBox3.Items.Clear();
                 AddChildrenToComboBox();
             }
+            else
+            {
+                if (comboBoxFilterGroup.Text !="") ShowPeopleInSelectedGroup();
+            }
         }
 
         private void comboBoxFilterGroup_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,12 +76,12 @@ namespace PreSchool
             //Employee
             var employeeGroup = db.Employees.Include("Groups").Where(g => g.Groups.Contains(groupName)); //Gets employees
 
-            listBox2.Items.Clear();
+            listBox3.Items.Clear();
 
             foreach (var employee in employeeGroup) //Shows employees
             {
                 string name = employee.FirstName + " " + employee.LastName;
-                listBox2.Items.Add(name);
+                listBox3.Items.Add(name);
             }
 
             //Add parents whos child belongs to selected group!

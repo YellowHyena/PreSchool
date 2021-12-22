@@ -29,12 +29,12 @@ namespace PreSchool.CRUD
 
                 db.SaveChanges();
                 child = db.Children.FirstOrDefault(s => s.PersonalNumber == dummy.PersonalNumber);
-                AttachGroup(child, dummy.Group);
+                AttachGroupToChild(child, dummy.Group);
             }
             else MessageBox.Show("Det finns redan ett barn med det personnummret!");
         }
 
-        public static void AttachGroup(Child child, string dummyGroup)
+        public static void AttachGroupToChild(Child child, string dummyGroup)
         {
             using var db = new SchoolContext();
             db.Children.Attach(child);
@@ -66,12 +66,12 @@ namespace PreSchool.CRUD
 
                 db.SaveChanges();
                 guardian = db.Guardians.FirstOrDefault(s => s.PersonalNumber == dummy.PersonalNumber);
-                AttachChildToGroup(guardian, dummy.Child);
+                AttachChildToGuardian(guardian, dummy.Child);
             }
             else MessageBox.Show("Det finns redan en vårdnadshavare med det personnummret!");
         }
 
-        private static void AttachChildToGroup(Guardian guardian, string dummyChild)
+        private static void AttachChildToGuardian(Guardian guardian, string dummyChild)
         {
             using var db = new SchoolContext();
             db.Guardians.Attach(guardian);
@@ -100,9 +100,7 @@ namespace PreSchool.CRUD
                     PersonalNumber = dummy.PersonalNumber,
                     PhoneNumber = dummy.PhoneNumber,
                     EmployementDate = dummy.StartDate,
-
                 });
-
                 db.SaveChanges();
                 employee = db.Employees.FirstOrDefault(s => s.PersonalNumber == dummy.PersonalNumber);
                 AttachGroupToEmployee(employee, dummy.Group);
@@ -112,7 +110,16 @@ namespace PreSchool.CRUD
 
         private static void AttachGroupToEmployee(Employee employee, string dummyGroup)
         {
-            throw new NotImplementedException();
+            using var db = new SchoolContext();
+            db.Employees.Attach(employee);
+
+            var group = db.Groups.Include("Employees").FirstOrDefault(p => p.Name == dummyGroup);
+
+            if (employee.Groups == null) employee.Groups = new List<Group>();
+
+            employee.Groups.Add(group);
+            db.Employees.Update(employee);
+            db.SaveChanges();
         }
     }
         #endregion
