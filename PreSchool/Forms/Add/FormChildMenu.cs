@@ -53,12 +53,14 @@ namespace PreSchool
         {
             if (radioButton1.Checked) Create.Child(ChildInfo());
             else if (radioButton2.Checked) Edit.Child(ChildInfo());
-           // else if (radioButton3.Checked) Delete.Child(ChildInfo());
+            else if (radioButton3.Checked) Delete.Child(GetChildFromComboBox()); //only need what person the combobox shows
+            MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
         }
 
-        #region ActionChoice
+        #region Action
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            childActionButton.Visible = true;
             comboBox1.Visible = false;
             comboBox1.Enabled = false;
             childActionButton.Text = "Lägg till";
@@ -66,11 +68,13 @@ namespace PreSchool
         }
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
+            childActionButton.Visible = true;
             RadioBtnLocation(78);
             childActionButton.Text = "Redigera";
         }
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
+            childActionButton.Visible = true; 
             RadioBtnLocation(108);
             childActionButton.Text = "Ta bort";
         }

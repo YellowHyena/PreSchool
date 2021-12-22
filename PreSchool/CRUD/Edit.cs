@@ -33,7 +33,7 @@ namespace PreSchool.CRUD
 
             var group = db.Groups.Include("Children").FirstOrDefault(p => p.Name == dummyGroup);
             if (child.Groups != null) child.Groups.Clear();
-            child.Groups = new List<Group>();
+            else child.Groups = new List<Group>();
 
             child.Groups.Add(group);
             db.Children.Update(child);
@@ -61,10 +61,10 @@ namespace PreSchool.CRUD
         {
             using var db = new SchoolContext();
             db.Guardians.Attach(guardian);
-
-            var child = db.Children.Include("Guardians").FirstOrDefault(p => p.FirstName == dummyChild);
+            string[] childName = dummyChild.Split(' ');
+            var child = db.Children.Include("Guardians").FirstOrDefault(p => p.FirstName == childName[0] && p.LastName == childName[1]);
             if (guardian.Children != null) guardian.Children.Clear();
-            guardian.Children = new List<Child>();
+            else guardian.Children = new List<Child>();
 
             guardian.Children.Add(child);
             db.Guardians.Update(guardian);
@@ -96,7 +96,7 @@ namespace PreSchool.CRUD
 
             var group = db.Groups.Include("Employees").FirstOrDefault(p => p.Name == dummyGroup);
             if (employee.Groups != null) employee.Groups.Clear();
-            employee.Groups = new List<Group>();
+            else employee.Groups = new List<Group>();
 
             employee.Groups.Add(group);
             db.Employees.Update(employee);

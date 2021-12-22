@@ -42,7 +42,7 @@
             this.startLabel = new System.Windows.Forms.Label();
             this.groupComboBox = new System.Windows.Forms.ComboBox();
             this.groupLabel = new System.Windows.Forms.Label();
-            this.addEmployeeButton = new System.Windows.Forms.Button();
+            this.employeeActionButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -168,16 +168,17 @@
             this.groupLabel.TabIndex = 84;
             this.groupLabel.Text = "Avdelning";
             // 
-            // addEmployeeButton
+            // employeeActionButton
             // 
-            this.addEmployeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addEmployeeButton.Location = new System.Drawing.Point(289, 463);
-            this.addEmployeeButton.Name = "addEmployeeButton";
-            this.addEmployeeButton.Size = new System.Drawing.Size(118, 29);
-            this.addEmployeeButton.TabIndex = 86;
-            this.addEmployeeButton.Text = "Add";
-            this.addEmployeeButton.UseVisualStyleBackColor = true;
-            this.addEmployeeButton.Click += new System.EventHandler(this.addEmployeeButton_Click);
+            this.employeeActionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.employeeActionButton.Location = new System.Drawing.Point(289, 463);
+            this.employeeActionButton.Name = "employeeActionButton";
+            this.employeeActionButton.Size = new System.Drawing.Size(118, 29);
+            this.employeeActionButton.TabIndex = 86;
+            this.employeeActionButton.Text = "Action";
+            this.employeeActionButton.UseVisualStyleBackColor = true;
+            this.employeeActionButton.Visible = false;
+            this.employeeActionButton.Click += new System.EventHandler(this.employeeActionButton_Click);
             // 
             // comboBox1
             // 
@@ -189,6 +190,7 @@
             this.comboBox1.Size = new System.Drawing.Size(187, 28);
             this.comboBox1.TabIndex = 90;
             this.comboBox1.Visible = false;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // radioButton3
             // 
@@ -201,6 +203,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Ta bort";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -213,6 +216,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Redigera";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -225,6 +229,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Lägg till";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // FormEmployeeMenu
             // 
@@ -235,7 +240,7 @@
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.addEmployeeButton);
+            this.Controls.Add(this.employeeActionButton);
             this.Controls.Add(this.groupComboBox);
             this.Controls.Add(this.groupLabel);
             this.Controls.Add(this.datePickerEmploymentDate);
@@ -276,7 +281,7 @@
         private Label startLabel;
         private ComboBox groupComboBox;
         private Label groupLabel;
-        private Button addEmployeeButton;
+        private Button employeeActionButton;
         private ComboBox comboBox1;
         private RadioButton radioButton3;
         private RadioButton radioButton2;

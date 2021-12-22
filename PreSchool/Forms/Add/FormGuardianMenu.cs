@@ -59,6 +59,7 @@ namespace PreSchool.Forms
         #region Action
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            guardianActionButton.Visible = true;
             comboBox1.Visible = false;
             comboBox1.Enabled = false;
             guardianActionButton.Text = "Lägg till";
@@ -67,12 +68,14 @@ namespace PreSchool.Forms
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
+            guardianActionButton.Visible = true;
             RadioBtnLocation(78);
             guardianActionButton.Text = "Redigera";
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
+            guardianActionButton.Visible = true;
             RadioBtnLocation(108);
             guardianActionButton.Text = "Ta bort";
         }
@@ -101,9 +104,9 @@ namespace PreSchool.Forms
         private Guardian GetGuardianFromComboBox()
         {
             using var db = new SchoolContext();
-            string[] childName = comboBox1.Text.Split(' ');
-            var child = db.Guardians.First(p => p.FirstName == childName[0] && p.LastName == childName[1]);
-            return child;
+            string[] guardianName = comboBox1.Text.Split(' ');
+            var guardian = db.Guardians.First(p => p.FirstName == guardianName[0] && p.LastName == guardianName[1]);
+            return guardian;
         }
         private void ChangeTextBoxesText()
         {
@@ -124,7 +127,8 @@ namespace PreSchool.Forms
         {
             if (radioButton1.Checked) Create.Guardian(GuardianInfo());
             else if (radioButton2.Checked) Edit.Guardian(GuardianInfo());
-            // else if (radioButton3.Checked) Delete.Guardian(GuardianInfo());
+            else if (radioButton3.Checked) Delete.Guardian(GetGuardianFromComboBox());//only need what person the combobox shows
+            MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
         }
     }
 }

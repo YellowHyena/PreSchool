@@ -76,6 +76,7 @@
             this.childActionButton.TabIndex = 43;
             this.childActionButton.Text = "Action";
             this.childActionButton.UseVisualStyleBackColor = true;
+            this.childActionButton.Visible = false;
             this.childActionButton.Click += new System.EventHandler(this.ChildActionButton_Click);
             // 
             // nameLabel

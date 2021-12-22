@@ -72,6 +72,7 @@
             this.guardianActionButton.TabIndex = 67;
             this.guardianActionButton.Text = "Action";
             this.guardianActionButton.UseVisualStyleBackColor = true;
+            this.guardianActionButton.Visible = false;
             this.guardianActionButton.Click += new System.EventHandler(this.GuardianActionButton_Click);
             // 
             // nameLabel
