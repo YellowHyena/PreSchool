@@ -1,6 +1,6 @@
 ﻿namespace PreSchool.Forms
 {
-    partial class FormAddEmployee
+    partial class FormEmployeeMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -43,12 +43,16 @@
             this.groupComboBox = new System.Windows.Forms.ComboBox();
             this.groupLabel = new System.Windows.Forms.Label();
             this.addEmployeeButton = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // labelPhoneCheck
             // 
             this.labelPhoneCheck.AutoSize = true;
-            this.labelPhoneCheck.Location = new System.Drawing.Point(469, 242);
+            this.labelPhoneCheck.Location = new System.Drawing.Point(509, 291);
             this.labelPhoneCheck.Name = "labelPhoneCheck";
             this.labelPhoneCheck.Size = new System.Drawing.Size(112, 20);
             this.labelPhoneCheck.TabIndex = 81;
@@ -57,7 +61,7 @@
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(248, 239);
+            this.textBoxPhone.Location = new System.Drawing.Point(288, 288);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(211, 27);
             this.textBoxPhone.TabIndex = 79;
@@ -65,7 +69,7 @@
             // labelPhone
             // 
             this.labelPhone.AutoSize = true;
-            this.labelPhone.Location = new System.Drawing.Point(74, 246);
+            this.labelPhone.Location = new System.Drawing.Point(114, 295);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(125, 20);
             this.labelPhone.TabIndex = 80;
@@ -74,7 +78,7 @@
             // perNumHelpLabel
             // 
             this.perNumHelpLabel.AutoSize = true;
-            this.perNumHelpLabel.Location = new System.Drawing.Point(469, 197);
+            this.perNumHelpLabel.Location = new System.Drawing.Point(509, 246);
             this.perNumHelpLabel.Name = "perNumHelpLabel";
             this.perNumHelpLabel.Size = new System.Drawing.Size(112, 20);
             this.perNumHelpLabel.TabIndex = 78;
@@ -83,7 +87,7 @@
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(248, 99);
+            this.nameBox.Location = new System.Drawing.Point(288, 148);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(211, 27);
             this.nameBox.TabIndex = 72;
@@ -91,7 +95,7 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(155, 99);
+            this.nameLabel.Location = new System.Drawing.Point(195, 148);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(53, 20);
             this.nameLabel.TabIndex = 73;
@@ -99,7 +103,7 @@
             // 
             // lastNameBox
             // 
-            this.lastNameBox.Location = new System.Drawing.Point(248, 146);
+            this.lastNameBox.Location = new System.Drawing.Point(288, 195);
             this.lastNameBox.Name = "lastNameBox";
             this.lastNameBox.Size = new System.Drawing.Size(211, 27);
             this.lastNameBox.TabIndex = 74;
@@ -107,7 +111,7 @@
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(116, 153);
+            this.lastNameLabel.Location = new System.Drawing.Point(156, 202);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(86, 20);
             this.lastNameLabel.TabIndex = 75;
@@ -115,7 +119,7 @@
             // 
             // perNumBox
             // 
-            this.perNumBox.Location = new System.Drawing.Point(248, 194);
+            this.perNumBox.Location = new System.Drawing.Point(288, 243);
             this.perNumBox.Name = "perNumBox";
             this.perNumBox.Size = new System.Drawing.Size(211, 27);
             this.perNumBox.TabIndex = 76;
@@ -123,7 +127,7 @@
             // perNumLabel
             // 
             this.perNumLabel.AutoSize = true;
-            this.perNumLabel.Location = new System.Drawing.Point(74, 201);
+            this.perNumLabel.Location = new System.Drawing.Point(114, 250);
             this.perNumLabel.Name = "perNumLabel";
             this.perNumLabel.Size = new System.Drawing.Size(123, 20);
             this.perNumLabel.TabIndex = 77;
@@ -132,7 +136,7 @@
             // datePickerEmploymentDate
             // 
             this.datePickerEmploymentDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.datePickerEmploymentDate.Location = new System.Drawing.Point(248, 288);
+            this.datePickerEmploymentDate.Location = new System.Drawing.Point(288, 337);
             this.datePickerEmploymentDate.Name = "datePickerEmploymentDate";
             this.datePickerEmploymentDate.Size = new System.Drawing.Size(211, 27);
             this.datePickerEmploymentDate.TabIndex = 82;
@@ -140,7 +144,7 @@
             // startLabel
             // 
             this.startLabel.AutoSize = true;
-            this.startLabel.Location = new System.Drawing.Point(51, 293);
+            this.startLabel.Location = new System.Drawing.Point(91, 342);
             this.startLabel.Name = "startLabel";
             this.startLabel.Size = new System.Drawing.Size(146, 20);
             this.startLabel.TabIndex = 83;
@@ -150,7 +154,7 @@
             // 
             this.groupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.groupComboBox.FormattingEnabled = true;
-            this.groupComboBox.Location = new System.Drawing.Point(249, 332);
+            this.groupComboBox.Location = new System.Drawing.Point(289, 381);
             this.groupComboBox.Name = "groupComboBox";
             this.groupComboBox.Size = new System.Drawing.Size(210, 28);
             this.groupComboBox.TabIndex = 85;
@@ -158,7 +162,7 @@
             // groupLabel
             // 
             this.groupLabel.AutoSize = true;
-            this.groupLabel.Location = new System.Drawing.Point(134, 335);
+            this.groupLabel.Location = new System.Drawing.Point(174, 384);
             this.groupLabel.Name = "groupLabel";
             this.groupLabel.Size = new System.Drawing.Size(81, 20);
             this.groupLabel.TabIndex = 84;
@@ -167,7 +171,7 @@
             // addEmployeeButton
             // 
             this.addEmployeeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addEmployeeButton.Location = new System.Drawing.Point(249, 414);
+            this.addEmployeeButton.Location = new System.Drawing.Point(289, 463);
             this.addEmployeeButton.Name = "addEmployeeButton";
             this.addEmployeeButton.Size = new System.Drawing.Size(118, 29);
             this.addEmployeeButton.TabIndex = 86;
@@ -175,11 +179,62 @@
             this.addEmployeeButton.UseVisualStyleBackColor = true;
             this.addEmployeeButton.Click += new System.EventHandler(this.addEmployeeButton_Click);
             // 
-            // FormAddEmployee
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(188, 78);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(187, 28);
+            this.comboBox1.TabIndex = 90;
+            this.comboBox1.Visible = false;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(99, 109);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.radioButton3.Size = new System.Drawing.Size(83, 24);
+            this.radioButton3.TabIndex = 89;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Ta bort";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(85, 79);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.radioButton2.Size = new System.Drawing.Size(97, 24);
+            this.radioButton2.TabIndex = 88;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Redigera";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(93, 49);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.radioButton1.Size = new System.Drawing.Size(89, 24);
+            this.radioButton1.TabIndex = 87;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Lägg till";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // FormEmployeeMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 603);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.addEmployeeButton);
             this.Controls.Add(this.groupComboBox);
             this.Controls.Add(this.groupLabel);
@@ -197,7 +252,7 @@
             this.Controls.Add(this.perNumLabel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FormAddEmployee";
+            this.Name = "FormEmployeeMenu";
             this.Text = "FormAddEmployee";
             this.Load += new System.EventHandler(this.FormAddEmployee_Load);
             this.ResumeLayout(false);
@@ -222,5 +277,9 @@
         private ComboBox groupComboBox;
         private Label groupLabel;
         private Button addEmployeeButton;
+        private ComboBox comboBox1;
+        private RadioButton radioButton3;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
     }
 }

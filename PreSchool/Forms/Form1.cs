@@ -76,13 +76,13 @@ namespace PreSchool
 
         private void btnAddGuardian_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormAddGuardian());
+            OpenChildForm(new FormGuardianMenu());
             HideSubMenu();
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormAddEmployee());
+            OpenChildForm(new FormEmployeeMenu());
             HideSubMenu();
         }
 

@@ -2,30 +2,39 @@
 using PreSchool.CRUD;
 using PreSchool.Database;
 using PreSchool.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace PreSchool
+namespace PreSchool.Forms
 {
-    public partial class FormChildMenu : Form
+    public partial class FormGuardianMenu : Form
     {
-        public FormChildMenu()
+        public FormGuardianMenu()
         {
             InitializeComponent();
         }
-        private void FormAddChild_Load(object sender, EventArgs e)
+
+        private void FormAddGuardian_Load(object sender, EventArgs e)
         {
-            using (var db = new SchoolContext()) //Adds the existing groups and children to combobox dropdowns
+            using (var db = new SchoolContext())
             {
-                foreach (var group in db.Groups)
-                {
-                    groupComboBox.Items.Add(group.Name);
-                }
                 foreach (var child in db.Children)
                 {
-                    comboBox1.Items.Add(child.FirstName +" "+ child.LastName);
+                    comboBoxGuardFor.Items.Add(child.FirstName + " " + child.LastName);
+                }
+                foreach (var guardian in db.Guardians)
+                {
+                    comboBox1.Items.Add(guardian.FirstName + " " + guardian.LastName);
                 }
             }
         }
-
         private void perNumBox_TextChanged(object sender, EventArgs e) //Checks if personal number has a letter in it. NOTE: MAYBE ADD MAXIMUM AND MINIMUM LENGTH?
         {
             bool number = long.TryParse(perNumBox.Text, out long perNum);
@@ -33,46 +42,39 @@ namespace PreSchool
             else perNumHelpLabel.Visible = true;
         }
 
-        public Dummy ChildInfo() //Using dummy to indicate that this is just information and not a person
+        public Dummy GuardianInfo() //Using dummy to indicate that this is just information and not a person
         {
-            var dummyChild = new Dummy
+
+            var dummyGuardian = new Dummy
             {
+                Child = comboBoxGuardFor.Text,
                 FirstName = nameBox.Text,
                 LastName = lastNameBox.Text,
                 PersonalNumber = long.Parse(perNumBox.Text),
-                StartDate = startDatePicker.Value,
-                EndDate = endDatePicker.Value,
-                ApplicationDate = applicationDatePicker.Value,
-                Group = groupComboBox.Text             
+                PhoneNumber = textBoxPhone.Text              
             };
-            if (!radioButton1.Checked) dummyChild.Id = GetChildFromComboBox().Id;
-            return dummyChild;
+            if (!radioButton1.Checked) dummyGuardian.Id = GetGuardianFromComboBox().Id;
+            return dummyGuardian;
         }
-
-        private void ChildActionButton_Click(object sender, EventArgs e)
-        {
-            if (radioButton1.Checked) Create.Child(ChildInfo());
-            else if (radioButton2.Checked) Edit.Child(ChildInfo());
-           // else if (radioButton3.Checked) Delete.Child(ChildInfo());
-        }
-
-        #region ActionChoice
+        #region Action
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             comboBox1.Visible = false;
             comboBox1.Enabled = false;
-            childActionButton.Text = "Lägg till";
+            guardianActionButton.Text = "Lägg till";
             ClearTextBoxes();
         }
+
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             RadioBtnLocation(78);
-            childActionButton.Text = "Redigera";
+            guardianActionButton.Text = "Redigera";
         }
+
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             RadioBtnLocation(108);
-            childActionButton.Text = "Ta bort";
+            guardianActionButton.Text = "Ta bort";
         }
         public void RadioBtnLocation(int pos)
         {
@@ -81,7 +83,6 @@ namespace PreSchool
             comboBox1.Enabled = true;
         }
         #endregion
-
         private void ClearTextBoxes() //https://stackoverflow.com/a/4811390
         {
             Action<Control.ControlCollection> func = null;
@@ -97,29 +98,33 @@ namespace PreSchool
 
             func(Controls);
         }
+        private Guardian GetGuardianFromComboBox()
+        {
+            using var db = new SchoolContext();
+            string[] childName = comboBox1.Text.Split(' ');
+            var child = db.Guardians.First(p => p.FirstName == childName[0] && p.LastName == childName[1]);
+            return child;
+        }
+        private void ChangeTextBoxesText()
+        {
+            var guardian = GetGuardianFromComboBox();
+            nameBox.Text = guardian.FirstName;
+            lastNameBox.Text = guardian.LastName;
+            perNumBox.Text = guardian.PersonalNumber.ToString();
+            textBoxPhone.Text = guardian.PhoneNumber;
+            //no Idea how to set combobox selection to match a string input so I leave that one for the user to work around :=)
+        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeTextBoxesText();
         }
 
-        private Child GetChildFromComboBox()
+        private void GuardianActionButton_Click(object sender, EventArgs e)
         {
-            using var db = new SchoolContext();
-            string[] childName = comboBox1.Text.Split(' ');
-            var child = db.Children.First(p => p.FirstName == childName[0] && p.LastName == childName[1]);
-            return child;
-        }
-        private void ChangeTextBoxesText()
-        {
-            var child = GetChildFromComboBox();
-            nameBox.Text = child.FirstName;
-            lastNameBox.Text = child.LastName;
-            perNumBox.Text = child.PersonalNumber.ToString();
-            startDatePicker.Value = child.StartDate;
-            endDatePicker.Value = child.EndDate;
-            applicationDatePicker.Value = child.ApplicationDate;
-            //no Idea how to set combobox selection to match a string input so I leave that one for the user to work around :=)
+            if (radioButton1.Checked) Create.Guardian(GuardianInfo());
+            else if (radioButton2.Checked) Edit.Guardian(GuardianInfo());
+            // else if (radioButton3.Checked) Delete.Guardian(GuardianInfo());
         }
     }
 }

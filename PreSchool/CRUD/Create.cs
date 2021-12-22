@@ -8,7 +8,7 @@ namespace PreSchool.CRUD
     {
         //I could probably use some sort of Builder or Factory or whatever here so I wouldn't have so much code that looks almost the same
         //but I'm still not 100% sure how to use Builders and Factories and don't have the time or energy to check. And this still works, it just looks messier.
-        //Plus when I've tried to substitute each class with a variable it wont work so..
+        //Plus when I've tried to substitute each class with a variable it wont work so and I'm not sure why...
         //I'll read more about them after Christmas
         #region Child
         public static void Child(Dummy dummy)
@@ -121,7 +121,6 @@ namespace PreSchool.CRUD
             db.Employees.Update(employee);
             db.SaveChanges();
         }
-    }
         #endregion
-    
+    }
 }

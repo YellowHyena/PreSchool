@@ -4,9 +4,9 @@ using PreSchool.Models;
 
 namespace PreSchool.Forms
 {
-    public partial class FormAddEmployee : Form
+    public partial class FormEmployeeMenu : Form
     {
-        public FormAddEmployee()
+        public FormEmployeeMenu()
         {
             InitializeComponent();
         }
