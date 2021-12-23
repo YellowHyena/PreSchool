@@ -14,9 +14,10 @@ namespace PreSchool.CRUD
         //Edit class does basically the same as Create class but it uses dummys Id to match with an existing person
 
         #region Child
-        public static void Child(Dummy dummy) //gets dummys info and updates it to child with same id as dummy, then attach new group to child
+        public static bool Child(Dummy dummy) //gets dummys info and updates it to child with same id as dummy, then attach new group to child
         {
             using var db = new SchoolContext();
+
             var child = db.Children.FirstOrDefault(s => s.Id == dummy.Id);
 
             child.FirstName = dummy.FirstName;
@@ -27,12 +28,17 @@ namespace PreSchool.CRUD
             child.ApplicationDate = dummy.ApplicationDate;
 
             db.Children.Update(child);
-            db.SaveChanges();
+            if (db.Children.Where(p => p.PersonalNumber == dummy.PersonalNumber).Count()! > 1)
+            {
+                db.SaveChanges();
 
-            child = db.Children.Include("Groups").FirstOrDefault(s => s.Id == dummy.Id);
-            EditChildGroup(child, dummy.Group);
+                child = db.Children.Include("Groups").FirstOrDefault(s => s.Id == dummy.Id);
+                EditChildGroup(child, dummy.Group);
+                return true;
+            }
+            else MessageBox.Show("Det finns redan ett barn med det personnummret!"); return false;
         }
-        
+
         private static void EditChildGroup(Child child, string dummyGroup) //It basically deletes what group you have attatched and then attatches a new one
         {
             using var db = new SchoolContext();
@@ -50,9 +56,10 @@ namespace PreSchool.CRUD
 
         //As in Create, Guardian region is basically Child region but with a Guardian instead and changes Child instead of Group
         #region Guardian
-        public static void Guardian(Dummy dummy)
+        public static bool Guardian(Dummy dummy)
         {
             using var db = new SchoolContext();
+
             var guardian = db.Guardians.FirstOrDefault(s => s.Id == dummy.Id);
 
             guardian.FirstName = dummy.FirstName;
@@ -61,10 +68,15 @@ namespace PreSchool.CRUD
             guardian.PhoneNumber = dummy.PhoneNumber;
 
             db.Guardians.Update(guardian);
-            db.SaveChanges();
+            if (db.Guardians.Where(p => p.Id == dummy.Id).Count() < 2)
+            {
+                db.SaveChanges();
 
-            guardian = db.Guardians.Include("Children").FirstOrDefault(s => s.Id == dummy.Id);
-            EditGuardianChild(guardian, dummy.Child);
+                guardian = db.Guardians.Include("Children").FirstOrDefault(s => s.Id == dummy.Id);
+                EditGuardianChild(guardian, dummy.Child);
+                return true;
+            }
+            else MessageBox.Show("Det finns redan en vårdnadshavare med det personnummret!"); return false;
         }
         public static void EditGuardianChild(Guardian guardian, string dummyChild)
         {
@@ -83,7 +95,7 @@ namespace PreSchool.CRUD
 
         //And Employee region is just Child region but Employee instead
         #region Employee
-        public static void Employee(Dummy dummy)
+        public static bool Employee(Dummy dummy)
         {
             using var db = new SchoolContext();
             var employee = db.Employees.FirstOrDefault(s => s.Id == dummy.Id);
@@ -95,10 +107,15 @@ namespace PreSchool.CRUD
             employee.EmployementDate = dummy.EmployementDate;
 
             db.Employees.Update(employee);
-            db.SaveChanges();
+            if (db.Employees.Where(p => p.PersonalNumber == dummy.PersonalNumber).Count()! > 1)
+            {
+                db.SaveChanges();
 
-            employee = db.Employees.Include("Groups").FirstOrDefault(s => s.Id == dummy.Id);
-            EditEmployeeGroup(employee, dummy.Group);
+                employee = db.Employees.Include("Groups").FirstOrDefault(s => s.Id == dummy.Id);
+                EditEmployeeGroup(employee, dummy.Group);
+                return true;
+            }
+            else MessageBox.Show("Det finns redan en anställd med det personnummret!"); return false;
         }
         private static void EditEmployeeGroup(Employee employee, string dummyGroup)
         {

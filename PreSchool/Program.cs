@@ -11,6 +11,7 @@ namespace PreSchool
         {
             //Sorry for all the messy code and duplicates in this project, Windows forms worked much more different than I thought 
             //and that created a bunch of dumb problems that I didn't find solutions for.
+            //and yes, I see the 45 warnings...
             //This helped me alot tho and was a really good guide https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
             #region Startup Tasks 

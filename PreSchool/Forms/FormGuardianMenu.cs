@@ -46,10 +46,11 @@ namespace PreSchool.Forms
         {
             if (CheckIfTextEmpty() == false)
             {
-                if (radioButton1.Checked) Create.Guardian(GuardianInfo());
-                else if (radioButton2.Checked) Edit.Guardian(GuardianInfo());
+                bool success = true; // sending this to eatch method to see if it succeed
+                if (radioButton1.Checked) success = Create.Guardian(GuardianInfo());
+                else if (radioButton2.Checked) success = Edit.Guardian(GuardianInfo());
                 else if (radioButton3.Checked) Delete.Guardian(GetGuardianFromComboBox());//dont need all info so no need for dummy
-                MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
+                if (success == true) MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
             }
             else MessageBox.Show("Fyll i all information");
         }
@@ -105,7 +106,7 @@ namespace PreSchool.Forms
         {
             using var db = new SchoolContext();
             string[] guardianName = comboBox1.Text.Split(' ');
-            var guardian = db.Guardians.First(p => p.FirstName == guardianName[0] && p.LastName == guardianName[1]);
+            var guardian = db.Guardians.First(p => p.FirstName == guardianName[0] && p.LastName == guardianName[1]); //crash if first or last names has spaces
             return guardian;
         }
        

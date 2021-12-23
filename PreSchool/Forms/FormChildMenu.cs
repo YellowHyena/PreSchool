@@ -49,10 +49,11 @@ namespace PreSchool
         {
             if (CheckIfTextEmpty() == false)
             {
-                if (radioButton1.Checked) Create.Child(ChildInfo());
-                else if (radioButton2.Checked) Edit.Child(ChildInfo());
+                bool success = true; // sending this to eatch method to see if it succeed
+                if (radioButton1.Checked) success = Create.Child(ChildInfo());
+                else if (radioButton2.Checked) success = Edit.Child(ChildInfo());
                 else if (radioButton3.Checked) Delete.Child(GetChildFromComboBox()); //dont need all info so no need for dummy
-                MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
+                if (success== true) MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
             }
             else MessageBox.Show("Fyll i all information");
         }
@@ -106,7 +107,7 @@ namespace PreSchool
         {
             using var db = new SchoolContext();
             string[] childName = comboBox1.Text.Split(' ');
-            var child = db.Children.First(p => p.FirstName == childName[0] && p.LastName == childName[1]);
+            var child = db.Children.First(p => p.FirstName == childName[0] && p.LastName == childName[1]);  //crash if first or last name has spaces
             return child;
         }
 

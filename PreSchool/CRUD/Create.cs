@@ -13,7 +13,7 @@ namespace PreSchool.CRUD
 
 
         #region Child
-        public static void Child(Dummy dummy) //Gets dummy information and creates a Child based in dummys information, then sends child to attach a group
+        public static bool Child(Dummy dummy) //Gets dummy information and creates a Child based in dummys information, then sends child to attach a group
         {
             using var db = new SchoolContext();
             var child = db.Children.FirstOrDefault(s => s.PersonalNumber == dummy.PersonalNumber);
@@ -32,8 +32,9 @@ namespace PreSchool.CRUD
                 db.SaveChanges();
                 child = db.Children.FirstOrDefault(s => s.PersonalNumber == dummy.PersonalNumber);
                 AttachGroupToChild(child, dummy.Group);
+                return true;
             }
-            else MessageBox.Show("Det finns redan ett barn med det personnummret!");
+            else MessageBox.Show("Det finns redan ett barn med det personnummret!"); return false;
         }
 
         public static void AttachGroupToChild(Child child, string dummyGroup) //gets child and attaches a group to it based on a groupname string
@@ -53,7 +54,7 @@ namespace PreSchool.CRUD
 
         //Guardian does the same as Child region but instead of Child its a Guardian and instead of attaching a group it attaches a child
         #region Guardian
-        public static void Guardian(Dummy dummy)
+        public static bool Guardian(Dummy dummy)
         {
             using var db = new SchoolContext();
             var guardian = db.Guardians.FirstOrDefault(s => s.PersonalNumber == dummy.PersonalNumber);
@@ -70,8 +71,10 @@ namespace PreSchool.CRUD
                 db.SaveChanges();
                 guardian = db.Guardians.FirstOrDefault(s => s.PersonalNumber == dummy.PersonalNumber);
                 AttachChildToGuardian(guardian, dummy.Child);
+                return true;
             }
-            else MessageBox.Show("Det finns redan en vårdnadshavare med det personnummret!");
+            else MessageBox.Show("Det finns redan en vårdnadshavare med det personnummret!"); return false;
+        
         }
 
         private static void AttachChildToGuardian(Guardian guardian, string dummyChild)
@@ -91,7 +94,7 @@ namespace PreSchool.CRUD
 
         //Employee is the same as Child region but an Employee instead
         #region Employee
-        internal static void Employee(Dummy dummy)
+        internal static bool Employee(Dummy dummy)
         {
             using var db = new SchoolContext();
             var employee = db.Employees.FirstOrDefault(s => s.PersonalNumber == dummy.PersonalNumber);
@@ -108,8 +111,9 @@ namespace PreSchool.CRUD
                 db.SaveChanges();
                 employee = db.Employees.FirstOrDefault(s => s.PersonalNumber == dummy.PersonalNumber);
                 AttachGroupToEmployee(employee, dummy.Group);
+                return true;
             }
-            else MessageBox.Show("Det finns redan en anställd med det personnummret!");
+            else MessageBox.Show("Det finns redan en anställd med det personnummret!"); return false;
         }
 
         private static void AttachGroupToEmployee(Employee employee, string dummyGroup)
