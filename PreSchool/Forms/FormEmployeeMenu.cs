@@ -6,27 +6,30 @@ namespace PreSchool.Forms
 {
     public partial class FormEmployeeMenu : Form
     {
+        //Child, Guardian and Employee forms are basically identical, they just gather and show different types of information
+        
         public FormEmployeeMenu()
         {
             InitializeComponent();
         }
 
-        private void FormAddEmployee_Load(object sender, EventArgs e)
+        private void FormEmployeeMenu_Load(object sender, EventArgs e)
         {
-            using (var db = new SchoolContext()) //Adds the existing groups to combobox dropdown
+            using (var db = new SchoolContext()) 
             {
-                foreach (var group in db.Groups)
+                foreach (var group in db.Groups) //Adds the existing groups to combobox dropdown
                 {
                     groupComboBox.Items.Add(group.Name);
                 }
 
-                foreach (var employee in db.Employees) //Adds employees to combobox
+                foreach (var employee in db.Employees) //Adds the existing guardians for selection when editing or deleting
                 {
                     comboBox1.Items.Add(employee.FirstName + " " + employee.LastName);
                 }
             }
         }
-        public Dummy EmployeeInfo() //Using dummy to indicate that this is just information and not a person
+       
+        public Dummy EmployeeInfo() //Using dummy to indicate that this is just information and not a person. Also easier to just transfer strings and transform it to classes elsewhere
         {
             var dummyEmployee = new Dummy
             {
@@ -39,18 +42,35 @@ namespace PreSchool.Forms
             if (!radioButton1.Checked) dummyEmployee.Id = GetEmployeeFromComboBox().Id;
             return dummyEmployee;
         }
-        private void employeeActionButton_Click(object sender, EventArgs e)
+       
+        private void employeeActionButton_Click(object sender, EventArgs e) //Adds, edits or deletes depending on radiobuttons
         {
             if (CheckIfTextEmpty() == false)
             {
                 if (radioButton1.Checked) Create.Employee(EmployeeInfo());
                 else if (radioButton2.Checked) Edit.Employee(EmployeeInfo());
-                else if (radioButton3.Checked) Delete.Employee(GetEmployeeFromComboBox());//only need what person the combobox shows
+                else if (radioButton3.Checked) Delete.Employee(GetEmployeeFromComboBox());//dont need all info so no need for dummy
                 MessageBox.Show("Klar! Ändringar visas nästa gång du laddar sidan.");
             }
             else MessageBox.Show("Fyll i all information");
         }
+        
+        private void perNumBox_TextChanged(object sender, EventArgs e) //Checks if personal number has a letter in it and disables action button if true
+        {
+            bool number = long.TryParse(perNumBox.Text, out long perNum);
+            if (number == true || perNumBox.Text == "")
+            {
+                perNumHelpLabel.Visible = false;
+                employeeActionButton.Enabled = true;
+            }
+            else
+            {
+                perNumHelpLabel.Visible = true;
+                employeeActionButton.Enabled = false;
+            }
+        }
 
+        //ActionChoiceHandles what happens when radiobuttons are pressed
         #region ActionChoice
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -79,6 +99,15 @@ namespace PreSchool.Forms
             comboBox1.Enabled = true;
         }
         #endregion
+       
+        private Employee GetEmployeeFromComboBox() //gets what person is selected for editing or deletion
+        {
+            using var db = new SchoolContext();
+            string[] employeeName = comboBox1.Text.Split(' ');
+            var employee = db.Employees.First(p => p.FirstName == employeeName[0] && p.LastName == employeeName[1]);
+            return employee;
+        }
+       
         private void ClearTextBoxes() //https://stackoverflow.com/a/4811390
         {
             Action<Control.ControlCollection> func = null;
@@ -94,6 +123,7 @@ namespace PreSchool.Forms
 
             func(Controls);
         }
+        
         private bool CheckIfTextEmpty() //https://stackoverflow.com/a/8750307
         {
             foreach (Control control in this.Controls)
@@ -101,33 +131,26 @@ namespace PreSchool.Forms
                 if (control is TextBox)
                 {
                     TextBox textBox = control as TextBox;
-                    if (textBox.Text == string.Empty) return true;
+                    if (textBox.Text == string.Empty || groupComboBox.Text == String.Empty) return true;
                 }
             };
             return false;
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+       
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) //when selecting an existing person from dropdown menu
         {
             ChangeTextBoxesText();
         }
-
-        private Employee GetEmployeeFromComboBox()
-        {
-            using var db = new SchoolContext();
-            string[] employeeName = comboBox1.Text.Split(' ');
-            var employee = db.Employees.First(p => p.FirstName == employeeName[0] && p.LastName == employeeName[1]);
-            return employee;
-        }
-
-        private void ChangeTextBoxesText()
+       
+        private void ChangeTextBoxesText() //changes text to mirror selected persons information
         {
             var employee = GetEmployeeFromComboBox();
             nameBox.Text = employee.FirstName;
             lastNameBox.Text = employee.LastName;
             perNumBox.Text = employee.PersonalNumber.ToString();
+            textBoxPhone.Text = employee.PhoneNumber;
             datePickerEmploymentDate.Value = employee.EmployementDate;
             //no Idea how to set combobox selection to match a string input so I leave that one for the user to work around :=)
-        }
+        }     
     }
 }

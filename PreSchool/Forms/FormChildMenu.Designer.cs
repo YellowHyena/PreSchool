@@ -53,7 +53,7 @@
             // perNumHelpLabel
             // 
             this.perNumHelpLabel.AutoSize = true;
-            this.perNumHelpLabel.Location = new System.Drawing.Point(466, 250);
+            this.perNumHelpLabel.Location = new System.Drawing.Point(502, 260);
             this.perNumHelpLabel.Name = "perNumHelpLabel";
             this.perNumHelpLabel.Size = new System.Drawing.Size(112, 20);
             this.perNumHelpLabel.TabIndex = 44;
@@ -62,7 +62,7 @@
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(269, 160);
+            this.nameBox.Location = new System.Drawing.Point(305, 170);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(187, 27);
             this.nameBox.TabIndex = 23;
@@ -70,7 +70,7 @@
             // childActionButton
             // 
             this.childActionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.childActionButton.Location = new System.Drawing.Point(269, 483);
+            this.childActionButton.Location = new System.Drawing.Point(305, 493);
             this.childActionButton.Name = "childActionButton";
             this.childActionButton.Size = new System.Drawing.Size(118, 29);
             this.childActionButton.TabIndex = 43;
@@ -82,7 +82,7 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(188, 160);
+            this.nameLabel.Location = new System.Drawing.Point(224, 170);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(53, 20);
             this.nameLabel.TabIndex = 24;
@@ -90,7 +90,7 @@
             // 
             // lastNameBox
             // 
-            this.lastNameBox.Location = new System.Drawing.Point(269, 203);
+            this.lastNameBox.Location = new System.Drawing.Point(305, 213);
             this.lastNameBox.Name = "lastNameBox";
             this.lastNameBox.Size = new System.Drawing.Size(187, 27);
             this.lastNameBox.TabIndex = 25;
@@ -98,7 +98,7 @@
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(153, 210);
+            this.lastNameLabel.Location = new System.Drawing.Point(189, 220);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(86, 20);
             this.lastNameLabel.TabIndex = 26;
@@ -106,7 +106,7 @@
             // 
             // perNumBox
             // 
-            this.perNumBox.Location = new System.Drawing.Point(269, 247);
+            this.perNumBox.Location = new System.Drawing.Point(305, 257);
             this.perNumBox.Name = "perNumBox";
             this.perNumBox.Size = new System.Drawing.Size(187, 27);
             this.perNumBox.TabIndex = 27;
@@ -115,7 +115,7 @@
             // perNumLabel
             // 
             this.perNumLabel.AutoSize = true;
-            this.perNumLabel.Location = new System.Drawing.Point(116, 253);
+            this.perNumLabel.Location = new System.Drawing.Point(152, 263);
             this.perNumLabel.Name = "perNumLabel";
             this.perNumLabel.Size = new System.Drawing.Size(123, 20);
             this.perNumLabel.TabIndex = 28;
@@ -125,7 +125,7 @@
             // 
             this.groupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.groupComboBox.FormattingEnabled = true;
-            this.groupComboBox.Location = new System.Drawing.Point(269, 290);
+            this.groupComboBox.Location = new System.Drawing.Point(305, 300);
             this.groupComboBox.Name = "groupComboBox";
             this.groupComboBox.Size = new System.Drawing.Size(187, 28);
             this.groupComboBox.TabIndex = 38;
@@ -133,7 +133,7 @@
             // groupLabel
             // 
             this.groupLabel.AutoSize = true;
-            this.groupLabel.Location = new System.Drawing.Point(154, 293);
+            this.groupLabel.Location = new System.Drawing.Point(190, 303);
             this.groupLabel.Name = "groupLabel";
             this.groupLabel.Size = new System.Drawing.Size(81, 20);
             this.groupLabel.TabIndex = 29;
@@ -142,7 +142,7 @@
             // applicationLabel
             // 
             this.applicationLabel.AutoSize = true;
-            this.applicationLabel.Location = new System.Drawing.Point(103, 430);
+            this.applicationLabel.Location = new System.Drawing.Point(139, 440);
             this.applicationLabel.Name = "applicationLabel";
             this.applicationLabel.Size = new System.Drawing.Size(141, 20);
             this.applicationLabel.TabIndex = 37;
@@ -150,14 +150,14 @@
             // 
             // applicationDatePicker
             // 
-            this.applicationDatePicker.Location = new System.Drawing.Point(269, 423);
+            this.applicationDatePicker.Location = new System.Drawing.Point(305, 433);
             this.applicationDatePicker.Name = "applicationDatePicker";
             this.applicationDatePicker.Size = new System.Drawing.Size(187, 27);
             this.applicationDatePicker.TabIndex = 36;
             // 
             // startDatePicker
             // 
-            this.startDatePicker.Location = new System.Drawing.Point(269, 339);
+            this.startDatePicker.Location = new System.Drawing.Point(305, 349);
             this.startDatePicker.Name = "startDatePicker";
             this.startDatePicker.Size = new System.Drawing.Size(187, 27);
             this.startDatePicker.TabIndex = 32;
@@ -165,7 +165,7 @@
             // endLabel
             // 
             this.endLabel.AutoSize = true;
-            this.endLabel.Location = new System.Drawing.Point(153, 386);
+            this.endLabel.Location = new System.Drawing.Point(189, 396);
             this.endLabel.Name = "endLabel";
             this.endLabel.Size = new System.Drawing.Size(84, 20);
             this.endLabel.TabIndex = 35;
@@ -174,7 +174,7 @@
             // startLabel
             // 
             this.startLabel.AutoSize = true;
-            this.startLabel.Location = new System.Drawing.Point(153, 344);
+            this.startLabel.Location = new System.Drawing.Point(189, 354);
             this.startLabel.Name = "startLabel";
             this.startLabel.Size = new System.Drawing.Size(91, 20);
             this.startLabel.TabIndex = 33;
@@ -182,7 +182,7 @@
             // 
             // endDatePicker
             // 
-            this.endDatePicker.Location = new System.Drawing.Point(269, 380);
+            this.endDatePicker.Location = new System.Drawing.Point(305, 390);
             this.endDatePicker.Name = "endDatePicker";
             this.endDatePicker.Size = new System.Drawing.Size(187, 27);
             this.endDatePicker.TabIndex = 34;

@@ -6,8 +6,15 @@ namespace PreSchool.CRUD
 {
     internal class Edit
     {
+        //I could probably use some sort of Builder or Factory or whatever here so I wouldn't have so much code that looks almost the same
+        //but I'm still not 100% sure how to use Builders and Factories and don't have the time or energy to check. And this still works, it just looks messier. (thanks to regions its ok)
+        //Plus when I've tried to substitute each db."whatever" with a variable it wont work so and I'm not sure why :(
+        //I'll read more about them after Christmas
+
+        //Edit class does basically the same as Create class but it uses dummys Id to match with an existing person
+
         #region Child
-        public static void Child(Dummy dummy)
+        public static void Child(Dummy dummy) //gets dummys info and updates it to child with same id as dummy, then attach new group to child
         {
             using var db = new SchoolContext();
             var child = db.Children.FirstOrDefault(s => s.Id == dummy.Id);
@@ -26,7 +33,7 @@ namespace PreSchool.CRUD
             EditChildGroup(child, dummy.Group);
         }
         
-        private static void EditChildGroup(Child child, string dummyGroup) //https://www.youtube.com/watch?v=dQw4w9WgXcQ
+        private static void EditChildGroup(Child child, string dummyGroup) //It basically deletes what group you have attatched and then attatches a new one
         {
             using var db = new SchoolContext();
             db.Children.Attach(child);
@@ -40,6 +47,8 @@ namespace PreSchool.CRUD
             db.SaveChanges();
         }
         #endregion
+
+        //As in Create, Guardian region is basically Child region but with a Guardian instead and changes Child instead of Group
         #region Guardian
         public static void Guardian(Dummy dummy)
         {
@@ -57,7 +66,7 @@ namespace PreSchool.CRUD
             guardian = db.Guardians.Include("Children").FirstOrDefault(s => s.Id == dummy.Id);
             EditGuardianChild(guardian, dummy.Child);
         }
-        public static void EditGuardianChild(Guardian guardian, string dummyChild) //https://www.youtube.com/watch?v=dQw4w9WgXcQ
+        public static void EditGuardianChild(Guardian guardian, string dummyChild)
         {
             using var db = new SchoolContext();
             db.Guardians.Attach(guardian);
@@ -71,6 +80,8 @@ namespace PreSchool.CRUD
             db.SaveChanges();
         }
         #endregion
+
+        //And Employee region is just Child region but Employee instead
         #region Employee
         public static void Employee(Dummy dummy)
         {

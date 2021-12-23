@@ -129,7 +129,7 @@
             this.btnHandle.Text = "Hantera";
             this.btnHandle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHandle.UseVisualStyleBackColor = true;
-            this.btnHandle.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnHandle.Click += new System.EventHandler(this.btnHandle_Click);
             // 
             // btnShow
             // 

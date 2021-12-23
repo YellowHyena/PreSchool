@@ -7,11 +7,13 @@ namespace PreSchool.CRUD
     internal class Create
     {
         //I could probably use some sort of Builder or Factory or whatever here so I wouldn't have so much code that looks almost the same
-        //but I'm still not 100% sure how to use Builders and Factories and don't have the time or energy to check. And this still works, it just looks messier.
-        //Plus when I've tried to substitute each class with a variable it wont work so and I'm not sure why...
+        //but I'm still not 100% sure how to use Builders and Factories and don't have the time or energy to check. And this still works, it just looks messier. (thanks to regions its ok)
+        //Plus when I've tried to substitute each db."whatever" with a variable it wont work so and I'm not sure why :(
         //I'll read more about them after Christmas
+
+
         #region Child
-        public static void Child(Dummy dummy)
+        public static void Child(Dummy dummy) //Gets dummy information and creates a Child based in dummys information, then sends child to attach a group
         {
             using var db = new SchoolContext();
             var child = db.Children.FirstOrDefault(s => s.PersonalNumber == dummy.PersonalNumber);
@@ -34,7 +36,7 @@ namespace PreSchool.CRUD
             else MessageBox.Show("Det finns redan ett barn med det personnummret!");
         }
 
-        public static void AttachGroupToChild(Child child, string dummyGroup)
+        public static void AttachGroupToChild(Child child, string dummyGroup) //gets child and attaches a group to it based on a groupname string
         {
             using var db = new SchoolContext();
             db.Children.Attach(child);
@@ -49,6 +51,7 @@ namespace PreSchool.CRUD
         }
         #endregion
 
+        //Guardian does the same as Child region but instead of Child its a Guardian and instead of attaching a group it attaches a child
         #region Guardian
         public static void Guardian(Dummy dummy)
         {
@@ -86,6 +89,7 @@ namespace PreSchool.CRUD
         }
         #endregion
 
+        //Employee is the same as Child region but an Employee instead
         #region Employee
         internal static void Employee(Dummy dummy)
         {
@@ -99,7 +103,7 @@ namespace PreSchool.CRUD
                     LastName = dummy.LastName,
                     PersonalNumber = dummy.PersonalNumber,
                     PhoneNumber = dummy.PhoneNumber,
-                    EmployementDate = dummy.StartDate,
+                    EmployementDate = dummy.EmployementDate,
                 });
                 db.SaveChanges();
                 employee = db.Employees.FirstOrDefault(s => s.PersonalNumber == dummy.PersonalNumber);

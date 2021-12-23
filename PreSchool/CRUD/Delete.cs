@@ -10,6 +10,9 @@ namespace PreSchool.CRUD
 {
     internal class Delete
     {
+        //Ass with Edit and Create, these are very similar to eachother
+        //you get the person from the selection on the dropdown in whatever form you're in
+
         public static void Child(Child child)
         {
             using var db = new SchoolContext();

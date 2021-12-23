@@ -259,7 +259,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FormEmployeeMenu";
             this.Text = "FormAddEmployee";
-            this.Load += new System.EventHandler(this.FormAddEmployee_Load);
+            this.Load += new System.EventHandler(this.FormEmployeeMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
